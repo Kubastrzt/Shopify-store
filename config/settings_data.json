@@ -1,6 +1,24 @@
 {
   "current": {
     "checkout_header_image": "shopify:\/\/shop_images\/self-serve-coffee-shop.jpg",
+    "sections": {
+      "info-listing": {
+        "type": "info-listing",
+        "blocks": {
+          "ced8c71c-aa6e-4db4-aa18-03653a3d3af9": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/self-serve-coffee-shop.jpg"
+            }
+          }
+        },
+        "block_order": [
+          "ced8c71c-aa6e-4db4-aa18-03653a3d3af9"
+        ],
+        "settings": {
+        }
+      }
+    },
     "content_for_index": [
 
     ]
