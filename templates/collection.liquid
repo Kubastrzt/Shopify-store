@@ -1,0 +1,14 @@
+{% paginate collection.products by 2 %}
+  {{collection.title}}<br>
+  {% if collection.image %}
+    {{ collection.image | img_url: "medium" | img_tag}}
+  {% endif %}
+  <br><br><br>
+  {% for product in collection.products %}
+    {{ product.title }}
+    <br>
+      <img src="{{ product.featured_image.src | img_url: 300x300 }}" alt="{{ product.featured_image.alt | escape }}">
+      <a href="{{ product.url | within: collection }}">Zobacz bliżej</a>
+      <br>
+  {% endfor %}
+{% endpaginate %}
