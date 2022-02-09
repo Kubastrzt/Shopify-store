@@ -1,12 +1,18 @@
+<img src="{{se"
 {% schema %}
   {
     "name": "Dodaj zdjęcie",
-    "settings": [
-      {
-        "type":"image_picker",
-        "label":"Twoje zdjecie",
-        "id": "image"
-      }
-    ]
+    "blocks":[{
+      "type":"image",
+      "name":"Wybierz",
+        "settings": [
+        {
+          "type":"image_picker",
+          "label":"Twoje zdjecie",
+          "id": "image"
+        }
+      ]
+    }]
+    
   }
 {% endschema %}
