@@ -1,5 +1,6 @@
-<img src="{{block.settings.image | img_url: 'medium'}}">
-
+{% for block in section.blocks %}
+  <img src="{{block.settings.image | img_url: 'medium'}}">
+{% endfor %}
 {% schema %}
   {
     "name": "Dodaj zdjęcie",
