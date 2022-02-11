@@ -18,17 +18,23 @@
           {% endfor %}
     </div>          
     <div class="logo">
-      <img src="{{block.settings.logo-header}}" width="100px">
+        {% for block in section.blocks %}
+            <img src="{{block.settings.logo-header}}" width="100px">
+        {% endfor %}
     </div>
   </nav>
 
   {% schema %}
     {
         "name":"Nagłówek",
-        "settings":[{
-           "type": "image_picker",
-           "label": "Logo",
-           "id":"logo-header"
+        "blocks":[{
+            "name":"Nowe logo",
+            "type":"image",
+            "settings":[{
+                "type": "image_picker",
+                "label": "Logo",
+                "id":"logo-header"
+             }]
         }]
     }
   {% endschema %}
