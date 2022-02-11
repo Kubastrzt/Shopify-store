@@ -19,7 +19,7 @@
     </div>          
     <div class="logo">
         {% for block in section.blocks %}
-            <img src="{{block.settings.logo-header | | img_url: 'medium'}}" width="100px">
+            <img src="{{block.settings.logoheader | | img_url: 'medium'}}">
         {% endfor %}
     </div>
   </nav>
@@ -33,7 +33,7 @@
             "settings":[{
                 "type": "image_picker",
                 "label": "Logo",
-                "id":"logo-header"
+                "id":"logoheader"
              }]
         }]
     }
