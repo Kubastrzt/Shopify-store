@@ -43,6 +43,12 @@
         "settings": {
           "rows": ""
         }
+      },
+      "header": {
+        "type": "header",
+        "settings": {
+          "logoheader": "shopify:\/\/shop_images\/logo.png"
+        }
       }
     },
     "content_for_index": [
