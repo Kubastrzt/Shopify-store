@@ -19,22 +19,19 @@
     </div>          
     <div class="logo">
         {% if section.settings.logoheader %}
-            <img src="{{block.settings.logoheader | img_url: 'medium'}}">
+            <img src="{{section.settings.logoheader | img_url: 'medium'}}">
         {% endif %}
     </div>
   </nav>
 
   {% schema %}
     {
-        "name":"Nagłówek",
-        "blocks":[{
-            "name":"Nowe logo",
-            "type":"image",
+        "name":"Nagłówek logo",
+        "type":"image",
             "settings":[{
                 "type": "image_picker",
                 "label": "Logo",
                 "id":"logoheader"
              }]
-        }]
     }
   {% endschema %}
