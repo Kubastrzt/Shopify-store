@@ -19,7 +19,7 @@
     </div>          
     <div class="logo">
         {% for block in section.blocks %}
-            <img src="{{block.settings.logoheader | | img_url: 'medium'}}">
+            <img src="{{block.settings.logoheader | img_url: 'medium'}}">
         {% endfor %}
     </div>
   </nav>
