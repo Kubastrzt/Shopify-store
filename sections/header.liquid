@@ -18,9 +18,9 @@
           {% endfor %}
     </div>          
     <div class="logo">
-        {% for block in section.blocks %}
+        {% if section.settings.logoheader %}
             <img src="{{block.settings.logoheader | img_url: 'medium'}}">
-        {% endfor %}
+        {% endif %}
     </div>
   </nav>
 
