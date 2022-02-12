@@ -14,7 +14,6 @@
               </svg>          
           </div>
           {% for link in linklists.main-menu.links %}
-            <div class="divider"></div>
             <a href="{{ link.url }}">{{ link.title }}</a>
           {% endfor %}
     </div>          
@@ -22,6 +21,10 @@
         {% if section.settings.logoheader %}
             <img src="{{section.settings.logoheader | img_url: 'medium'}}">
         {% endif %}
+    </div>
+    <div class="menu-buttons">
+      <a href="#" class="search"><img src="/assets/search.png"></a>
+      <a href="#" class="store"><img src="/assets/shopping_bag.png"></a>
     </div>
   </div>
 </nav>
