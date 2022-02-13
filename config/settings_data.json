@@ -4,42 +4,6 @@
     "sections": {
       "info-listing": {
         "type": "info-listing",
-        "blocks": {
-          "d29ccd4b-d7fc-4ef8-90a8-1d1f7703b0aa": {
-            "type": "image",
-            "settings": {
-              "images": "shopify:\/\/shop_images\/retail-shopping-package.jpg",
-              "description": "Siema"
-            }
-          },
-          "5e9f5581-f910-4472-af2b-1f02a1823422": {
-            "type": "image",
-            "settings": {
-              "images": "shopify:\/\/shop_images\/retail-shopping-package.jpg",
-              "description": "Halko"
-            }
-          },
-          "ce6dffcf-1633-4107-a00d-420be7ca8056": {
-            "type": "image",
-            "settings": {
-              "images": "shopify:\/\/shop_images\/retail-shopping-package.jpg",
-              "description": "Text"
-            }
-          },
-          "281fa458-057a-4e21-8cb5-6ed7cc7cd0d8": {
-            "type": "image",
-            "settings": {
-              "images": "shopify:\/\/shop_images\/retail-shopping-package.jpg",
-              "description": ""
-            }
-          }
-        },
-        "block_order": [
-          "d29ccd4b-d7fc-4ef8-90a8-1d1f7703b0aa",
-          "5e9f5581-f910-4472-af2b-1f02a1823422",
-          "ce6dffcf-1633-4107-a00d-420be7ca8056",
-          "281fa458-057a-4e21-8cb5-6ed7cc7cd0d8"
-        ],
         "settings": {
           "rows": ""
         }

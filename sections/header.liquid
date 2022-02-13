@@ -23,8 +23,8 @@
         {% endif %}
     </div>
     <div class="menu-buttons">
-      <a href="#" class="search"><img src="/assets/search.png"></a>
-      <a href="#" class="store"><img src="/assets/shopping_bag.png"></a>
+      <a href="#" class="search"><img src="{{ section.settings.search | img_url: 'medium'}}"></a>
+      <a href="#" class="store"><img src="{{ section.settings.store | img_url: 'medium' }}"></a>
     </div>
   </div>
 </nav>
@@ -36,6 +36,17 @@
                 "type": "image_picker",
                 "label": "Logo",
                 "id":"logoheader"
-             }]
+             },
+			{
+                "type": "image_picker",
+                "label": "Wyszukaj",
+                "id":"search" 
+              },
+              {
+                "type": "image_picker",
+                "label": "Koszyk",
+                "id":"store" 
+              }
+			]
     }
   {% endschema %}
