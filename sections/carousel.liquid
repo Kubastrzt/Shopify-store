@@ -2,6 +2,7 @@
     <div class="carousel">
         {% for block in section.blocks %}
             <img src="{{ block.settings.carousel-img }}">
+            <label class="content-img">{{ block.settings.img-content }}</label>
         {% endfor %}
     </div>
 </div>
@@ -9,13 +10,19 @@
 {
     "name":"Zdjęcia do slidera",
     "blocks":[{
-        "name":"Dodaj zdjęcie",
+        "name":"Noew zdjęcie",
         "type":"image",
         "settings":[{
             "type":"image_picker",
             "label":"Wybierz zdjęcie",
             "id":"carousel-img"
-        }]
+        },
+        {
+            "type":"text",
+            "label":"Opis na zdjęcie",
+            "id":"img-content"
+        }
+        ]
     }]
 }
 {% endschema %}
