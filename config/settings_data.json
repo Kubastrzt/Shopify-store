@@ -11,7 +11,26 @@
       "header": {
         "type": "header",
         "settings": {
-          "logoheader": "shopify:\/\/shop_images\/logo.png"
+          "logoheader": "shopify:\/\/shop_images\/logo.png",
+          "search": "shopify:\/\/shop_images\/search.png",
+          "store": "shopify:\/\/shop_images\/shopping_bag.png"
+        }
+      },
+      "carousel": {
+        "type": "carousel",
+        "blocks": {
+          "94f8080d-16fe-4387-8b8b-1757701ebb13": {
+            "type": "image",
+            "settings": {
+              "carousel-img": "shopify:\/\/shop_images\/landing.png",
+              "img-content": "Pellentesque faucibus quis metus et elementum"
+            }
+          }
+        },
+        "block_order": [
+          "94f8080d-16fe-4387-8b8b-1757701ebb13"
+        ],
+        "settings": {
         }
       }
     },
