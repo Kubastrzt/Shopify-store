@@ -5,7 +5,7 @@
   .menu-inner-wrapper{
     align-items: center;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 230px 1fr;
   }
   .hamburger{
     height: 24px;
@@ -34,14 +34,9 @@
     padding: 17px 0;
     border-bottom: 1px solid rgba(61,77,76,.15);
   }
-  .divider{
-    height: 1px;
-    width: 262px;
-    margin: 17px 0 17px 0;
-    background-color: #3D4D4C;
-  }
   .logo img{
     width: 100px;
+    margin: 0 70px;
   }
   .menu-buttons{
     width: 100%;
@@ -54,6 +49,6 @@
     padding-left: 10px;
   }
   .close-menu{
-    padding: 17px 0;
+    padding: 17px 0 36px;
     border-bottom: 1px solid rgba(61,77,76,.15);
   }
