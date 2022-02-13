@@ -18,7 +18,6 @@
   <header>
     {% section 'header' %}
   </header>
-
   {% if shop.customer_accounts_enabled %}
     {% if customer %}
       <a href="/account">account</a>
@@ -30,7 +29,7 @@
   {% endif %}
 
   <main role="main">
-    {{ content_for_layout }}
+    {% section 'carousel' %}
   </main>
 </body>
 <script>
