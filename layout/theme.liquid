@@ -9,7 +9,9 @@
   {{ content_for_header }} <!-- Header hook for plugins -->
   {{ 'application.scss.css' | asset_url | stylesheet_tag }}
   {{ 'application.js' | asset_url | script_tag }}
+  {{ 'carousel.js' | asset_url | script_tag }}
   {{ 'header.scss' | asset_url | stylesheet_tag }}
+  {{ 'carousel.scss' | asset_url | stylesheet_tag }}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Dongle&family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
@@ -31,6 +33,11 @@
   <main role="main">
     {{ content_for_layout }}
     {% section 'carousel' %}
+    <h2>NOWOŚCI</h2>
+    <h2>NOWOŚCI</h2>
+    <h2>NOWOŚCI</h2>
+    <h2>NOWOŚCI</h2>
+    <h2>NOWOŚCI</h2>
   </main>
 </body>
 <script>
