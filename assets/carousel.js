@@ -1,19 +1,27 @@
 
 var x
 var y
-
+window.onerror = function(message, url, lineNumber) {  
+    return true; 
+};
 
 function scroller() {
     var elmnt = document.querySelector(".carousel")
     x = elmnt.scrollLeft
+    var stala=100;
     const dots= document.querySelectorAll('.slide-dots')
     dots[0].classList.add('dots-addon')
-    if(x>100 && x<450){
-        dots[0].classList.remove('dots-addon')
-        dots[1].classList.add('dots-addon')
+    for(var sliderLength=1;sliderLength<=dots.length;sliderLength++)
+    {
+        if(x>stala){
+            dots[sliderLength-1].classList.remove('dots-addon')
+            dots[sliderLength].classList.add('dots-addon')
+        }
+        else if(stala>x){
+            dots[sliderLength].classList.remove('dots-addon')
+        }
+        stala+=375
     }
-    else
-        dots[1].classList.remove('dots-addon')
   }
 
 window.setInterval('scroller()',100)
