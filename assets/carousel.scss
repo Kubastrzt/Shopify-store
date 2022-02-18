@@ -5,12 +5,13 @@
 }
 .carousel{
 	width: 375px;
+  	height: 520px;
 	position: relative;
 	display: grid;
 	grid-auto-flow: column;
 	grid-auto-columns: 100%;
-	overflow-x: auto;
-	overscroll-behavior-inline: contain;
+  	overflow-x: auto;
+  	overflow-y: hidden;
 }
 .carousel::-webkit-scrollbar{
 	display: none;

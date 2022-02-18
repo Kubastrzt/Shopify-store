@@ -2,18 +2,10 @@
   "current": {
     "checkout_header_image": "shopify:\/\/shop_images\/self-serve-coffee-shop.jpg",
     "sections": {
-      "info-listing": {
-        "type": "info-listing",
-        "settings": {
-          "rows": ""
-        }
-      },
       "header": {
         "type": "header",
         "settings": {
-          "logoheader": "shopify:\/\/shop_images\/logo.png",
-          "search": "shopify:\/\/shop_images\/search.png",
-          "store": "shopify:\/\/shop_images\/shopping_bag.png"
+          "logoheader": "shopify:\/\/shop_images\/logo.png"
         }
       },
       "carousel": {
@@ -25,10 +17,18 @@
               "carousel-img": "shopify:\/\/shop_images\/landing.png",
               "img-content": "Pellentesque faucibus quis metus et elementum"
             }
+          },
+          "5848c7ef-99ae-446f-be73-da64d68e2edd": {
+            "type": "image",
+            "settings": {
+              "carousel-img": "shopify:\/\/shop_images\/landing.png",
+              "img-content": "Pellentesque faucibus quis metus et elementum"
+            }
           }
         },
         "block_order": [
-          "94f8080d-16fe-4387-8b8b-1757701ebb13"
+          "94f8080d-16fe-4387-8b8b-1757701ebb13",
+          "5848c7ef-99ae-446f-be73-da64d68e2edd"
         ],
         "settings": {
         }
