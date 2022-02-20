@@ -1,21 +1,22 @@
 <div class="products-wrapper">
-{% for products in collection.products %}
-    {% for settings in section.settings %}
-        <img src="{{ section.settings.new-collection | image_url: width: 308, height: 429 }}">
-    {% endfor %}
-{% endfor %}
+    {{ section.settings.new-collection.title }}
+    {{ section.settings.new-collection.products_count }}
+  {% for product in section.settings.new-collection.products %}
+      {{ product.title }}
+      <img src="{{ product.featured_image.src | image_url: width: 300, height: 500}}">
+  {% endfor %}
 </div>
 {% schema %}
 {
+"name":"Nowości- kolekcja",
+"settings":[{
+    "type":"collection",
+    "id":"new-collection",
+    "label":"Wybierz kolekcje"
+}],
+"presets":[{
     "name":"Nowości- kolekcja",
-    "settings":[{
-        "type":"collection",
-        "id":"new-collection",
-        "label":"Wybierz kolekcje"
-    }],
-    "presets":[{
-        "name":"Nowości- kolekcja",
-        "category":"text"
-    }]
+    "category":"text"
+}]
 }
 {% endschema %}
