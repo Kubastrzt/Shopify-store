@@ -9,6 +9,7 @@ function scroller() {
     var elmnt = document.querySelector(".carousel")
     x = elmnt.scrollLeft
     var stala=100;
+    var viewportWidth=window.innerWidth;
     const dots= document.querySelectorAll('.slide-dots')
     dots[0].classList.add('dots-addon')
     for(var sliderLength=1;sliderLength<=dots.length;sliderLength++)
@@ -20,7 +21,7 @@ function scroller() {
         else if(stala>x){
             dots[sliderLength].classList.remove('dots-addon')
         }
-        stala+=375
+        stala+=viewportWidth;
     }
   }
 

@@ -2,7 +2,7 @@
     <div class="carousel snap-carousel">
         {% for block in section.blocks %}
         <div class="slide">
-            <img src="{{ block.settings.carousel-img | image_url: width: 375, height: 520}}">
+            <img src="{{ block.settings.carousel-img | img_url:'master' }}">
             <div class="content-img">
                 <label>{{ block.settings.img-content }}</label>
                 <a href="#">ZOBACZ WIĘCEJ</a>
