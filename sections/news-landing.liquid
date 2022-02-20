@@ -1,15 +1,19 @@
-{% for product in section.settings.new-collection.products %}
-    <div class="products-wrapper">
-        <div class="product-img"> 
-            <img src="{{ product.featured_image.src | image_url: width: 300, height: 500}}">
-        </div>
-        <div class="product-info">
-            <label class="product-collection-title">{{ section.settings.new-collection.title }}</label>
-            <label class="product-title">{{ product.title }}</label>
-            <label class="product-price">{{ product.price | money }}</label>
-        </div>
-    </div>  
-{% endfor %}
+<div class="landing-news">
+    <h2>NOWOŚCI</h2>
+    <div class="products-outer-wrapper snap-product">
+    {% for product in section.settings.new-collection.products %}
+        <div class="products-inner-wrapper">
+            <div class="products">
+                <div class="product-img"><img src="{{ product.featured_image.src | image_url: width:300, crop:'center' }}"></div>
+                    <div class="product-collection-title">{{ section.settings.new-collection.title }}</div>
+                    <div class="product-title">{{ product.title }}</div>
+                    <div class="product-price">{{ product.price | money }}</div>
+                
+            </div>
+        </div>  
+    {% endfor %}
+    </div>
+</div>
 
 
 {% schema %}
