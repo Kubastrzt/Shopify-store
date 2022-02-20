@@ -1,11 +1,17 @@
-<div class="products-wrapper">
-    {{ section.settings.new-collection.title }}
-    {{ section.settings.new-collection.products_count }}
-  {% for product in section.settings.new-collection.products %}
-      {{ product.title }}
-      <img src="{{ product.featured_image.src | image_url: width: 300, height: 500}}">
-  {% endfor %}
-</div>
+{% for product in section.settings.new-collection.products %}
+    <div class="products-wrapper">
+        <div class="product-img"> 
+            <img src="{{ product.featured_image.src | image_url: width: 300, height: 500}}">
+        </div>
+        <div class="product-info">
+            <label class="product-collection-title">{{ section.settings.new-collection.title }}</label>
+            <label class="product-title">{{ product.title }}</label>
+            <label class="product-price">{{ product.price | money }}</label>
+        </div>
+    </div>  
+{% endfor %}
+
+
 {% schema %}
 {
 "name":"Nowości- kolekcja",
