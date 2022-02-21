@@ -1,12 +1,22 @@
+{{ 'product-page.scss' | asset_url | stylesheet_tag }}
 {% assign current_variant = product.selected_or_first_available_variant %}
 {% assign featured_image = current_variant.featured_image | default: product.featured_image %}
-<img src="{{ featured_image | img_url: 'large' }}" alt="{{ featured_image.alt | escape }}" id="ProductPhotoImg">
-{% for image in product.images %}
-  <a href="{{ image.src | img_url: 'large' }}">
-    <img src="{{ image.src | img_url: 'compact' }}" alt="{{ image.alt | escape }}">
-  </a>
-{% endfor %}
-<h1>{{ product.title }}</h1>
+<div class="slider-wrapper">
+  <div class="slider snaps">
+    {% for image in product.images %}
+        <img src="{{ image.src | img_url: 'master' }}">
+    {% endfor %}
+  </div>
+  <div class="dots-wrapperr">
+    {% for image in product.images %}
+        <div class="slider-dots"></div>
+    {% endfor %}
+  </div>
+</div>
+<div class="product-info-wrapper">
+  {{ product.collections.first.title }}
+  <h1>{{ product.title }}</h1>
+</div>
 <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">
   <select name="id" id="productSelect">
     {% for variant in product.variants %}
@@ -27,3 +37,35 @@
   <button type="submit" name="add" id="AddToCart">Add to cart</button>
 </form>
 <div>{{ product.description }}</div>
+
+<script>
+  
+var x
+var y
+window.onerror = function(message, url, lineNumber) {  
+    return true; 
+};
+
+function scroller() {
+    var elmnt = document.querySelector(".slider")
+    x = elmnt.scrollLeft
+    var stala=100;
+    var viewportWidth=window.innerWidth;
+    const dots= document.querySelectorAll('.slider-dots')
+    dots[0].classList.add('dots-addon')
+    for(var sliderLength=1;sliderLength<=dots.length;sliderLength++)
+    {
+        if(x>stala){
+            dots[sliderLength-1].classList.remove('dots-addon')
+            dots[sliderLength].classList.add('dots-addon')
+        }
+        else if(stala>x){
+            dots[sliderLength].classList.remove('dots-addon')
+        }
+        stala+=viewportWidth;
+    }
+  }
+
+window.setInterval('scroller()',100)
+
+</script>
