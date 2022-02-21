@@ -14,30 +14,29 @@
   </div>
 </div>
 <div class="product-info-wrapper">
-  {{ product.collections.first.title }}
-  <h1>{{ product.title }}</h1>
-</div>
+  <div class="general-info-wrapper">
+    <label>{{ product.collections.first.title }}</label>
+    <h1>{{ product.title }}</h1>
+    <h3>{{ product.price | money }}</h3>
+  </div>
 <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">
-  <select name="id" id="productSelect">
     {% for variant in product.variants %}
       {% if variant.available %}
-        <option value="{{ variant.id }}">
-          {{ variant.title }} - {{ variant.price | money_with_currency }}
-        </option>
+          <img src="{{ variant.url | img_url: 'medium'}}">
       {% else %}
         <option disabled="disabled">
           {{ variant.title }} - sold out
         </option>
       {% endif %}
     {% endfor %}
-  </select>
+
   {{ current_variant.price | money }}
   <label for="Quantity">quantity</label>
   <input type="number" id="Quantity" name="quantity" value="1" min="1">
   <button type="submit" name="add" id="AddToCart">Add to cart</button>
 </form>
 <div>{{ product.description }}</div>
-
+</div>
 <script>
   
 var x
