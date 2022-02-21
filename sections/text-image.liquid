@@ -1,0 +1,45 @@
+<div class="text-image-wrapper">
+    <div class="image-inner-wrapper">
+        {% if section.settings.background %}
+            <img src="{{ section.settings.background | image_url: height:500 }}">
+        {% endif %}
+    </div>
+    <div class="text-inner-wrapper">
+        <div class="text">
+            {% if section.settings.tekst %}
+                <label>{{ section.settings.tekst }}</label>
+            {% endif %}
+        </div>
+        <div class="link">
+            {% if section.settings.add-button %}
+                <a href="#" class="more-button">ZOBACZ WIĘCEJ</a>
+            {% endif %} 
+        </div>
+    </div>
+</div>
+
+{% schema %}
+{
+    "name":"Text/Image",
+    "settings":[{
+            "label":"Zmień tło",
+            "id":"background",
+            "type":"image_picker"
+        },
+        {
+            "label":"Dodaj tekst",
+            "type":"text",
+            "id":"tekst"  
+        },
+        {
+            "label":"Dodaj przycisk",
+            "type":"checkbox",
+            "id":"add-button",
+            "default":true
+        }],
+    "presets":[{
+        "name":"Text/Image",
+        "category":"text"
+    }]
+}
+{% endschema %}

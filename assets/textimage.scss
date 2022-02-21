@@ -1,0 +1,39 @@
+.text-image-wrapper{
+    position: relative;
+}
+.image-inner-wrapper{
+    min-width: 375px;
+    max-height: 500px;
+}
+.image-inner-wrapper img{
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+.text-inner-wrapper{
+    position: absolute;
+    top: 310px;
+    padding: 35px;
+}
+.text{
+    margin: 0 0 36px;
+}
+.text label{
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 2px;
+    color: white;
+    text-transform: uppercase;
+}
+.more-button{
+    font-size: 12px;
+    letter-spacing:3px;
+    padding: 15px;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.link{
+
+}
