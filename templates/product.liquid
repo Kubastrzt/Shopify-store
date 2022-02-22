@@ -1,17 +1,18 @@
+
 {{ 'product-page.scss' | asset_url | stylesheet_tag }}
 {% assign current_variant = product.selected_or_first_available_variant %}
 {% assign featured_image = current_variant.featured_image | default: product.featured_image %}
 <div class="slider-wrapper">
   <div class="slider snaps">
     {% for image in product.images %}
-        <img src="{{ image.src | img_url: 'master' }}">
+      <img src="{{ product.featured_image | img_url: 'medium' }}">
     {% endfor %}
   </div>
-  <div class="dots-wrapperr">
-    {% for image in product.images %}
-        <div class="slider-dots"></div>
-    {% endfor %}
-  </div>
+</div>
+<div class="dots-wrapperr">
+  {% for image in product.images %}
+      <div class="slider-dots"></div>
+  {% endfor %}
 </div>
 <div class="product-info-wrapper">
   <div class="general-info-wrapper">
@@ -19,22 +20,28 @@
     <h1>{{ product.title }}</h1>
     <h3>{{ product.price | money }}</h3>
   </div>
-<form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">
-    {% for variant in product.variants %}
-      {% if variant.available %}
-          <img src="{{ variant.url | img_url: 'medium'}}">
-      {% else %}
-        <option disabled="disabled">
-          {{ variant.title }} - sold out
-        </option>
-      {% endif %}
-    {% endfor %}
-
+  <div class="variants">
+    <div class="product-template" for="product-template">WZÓR</div>
+    <div class="variants-inner">
+      {% for variant in product.variants %}
+        <img id="{{variant.id}}" onclick="selectedVariant(this.id)" src="{{ variant.image.src | img_url: 'medium' }}">
+      {% endfor %}
+    </div>
+  </div>
+{% form 'product', product %}
+    <div class="product-size-wrapper">
+      <div class="product-size" for="product-size">ROZMIAR</div>
+      <select id="product-size" name="id">
+        {% for variant in product.variants %}
+            <option value="{{variant.id}}">{{ variant.option2 }}</option>
+        {% endfor %}
+      </select>
+    </div>
+  <button type="submit" name="add" id="AddToCart">Add to cart</button>
+{% endform %}
   {{ current_variant.price | money }}
   <label for="Quantity">quantity</label>
   <input type="number" id="Quantity" name="quantity" value="1" min="1">
-  <button type="submit" name="add" id="AddToCart">Add to cart</button>
-</form>
 <div>{{ product.description }}</div>
 </div>
 <script>
@@ -67,4 +74,35 @@ function scroller() {
 
 window.setInterval('scroller()',100)
 
+var globalID
+var oldGlobalID
+
+function selectedVariant(id){
+  globalID=id
+  document.getElementById(globalID).classList.toggle("border-img")
+  
+}
+
+class Variant{
+  constructor(){
+  }
+  variantID(){
+    var currentID=globalID
+    console.log(currentID)
+  }
+  showThumbnail(){
+    
+  }
+}
+
+const variantObject= document.querySelectorAll('[data-variant]')
+
+const variant = new Variant()
+
+variantObject.forEach(button => {
+  button.addEventListener('click', ()=> {
+    variant.variantID()
+    variant.showThumbnail()
+  }) 
+});
 </script>
