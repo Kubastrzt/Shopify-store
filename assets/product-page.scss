@@ -20,10 +20,10 @@
 	-ms-overflow-style: none;
 	scrollbar-width: none; 
 }
-.snaps{
+.snaps> * {
     scroll-snap-align: start;
 }
-.snaps > * {
+.snaps {
     scroll-snap-type: inline mandatory;
 }
 .slider img{
