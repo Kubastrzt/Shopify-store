@@ -39,6 +39,13 @@
     scroll-snap-type: inline mandatory;
     scroll-padding-inline: 20px;
 }
+.blog-wrapper::-webkit-scrollbar{
+	display: none;
+}
+.blog-wrapper{
+	-ms-overflow-style: none;
+	scrollbar-width: none; 
+}
 .post-inner-wrapper{
     height: 100%;
     width: 100%;
