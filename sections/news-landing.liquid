@@ -1,5 +1,5 @@
 <div class="landing-news">
-    <h2>NOWOŚCI</h2>
+    <h2>{{ section.settings.heading-collection }}</h2>
     <div class="products-outer-wrapper snap-product">
     {% for product in section.settings.new-collection.products %}
         <a href="{{ product.url }}">
@@ -25,7 +25,13 @@
     "type":"collection",
     "id":"new-collection",
     "label":"Wybierz kolekcje"
-}],
+},
+{
+    "type":"text",
+    "id":"heading-collection",
+    "label":"Opis kolekcji"
+}
+],
 "presets":[{
     "name":"Nowości- kolekcja",
     "category":"text"
