@@ -1,0 +1,78 @@
+.container{
+    margin: 40px 0 0 0;
+    width: 100%;
+}
+.container h5{
+    color: rgba(82, 125, 120, 0.5);
+    font-size: 12px;
+    letter-spacing: 1px;
+    line-height: 24px;
+    font-weight: normal;
+    text-align: center;
+}
+.container h1{
+    letter-spacing: 2px;
+    font-size: 18px;
+    font-weight: normal;
+    color: #3D4D4C;
+    text-align: center;
+    text-transform: uppercase;
+}
+.label{
+    margin: 12px 0 40px 0;
+}
+.blog-wrapper{
+    position: relative;
+    height: 436px;
+    width: 100%;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 100%;
+    padding: 10px 20px 20px 20px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+.blog-snaps > *{
+    scroll-snap-align: start;
+}
+.blog-snaps{
+    scroll-snap-type: inline mandatory;
+    scroll-padding-inline: 20px;
+}
+.post-inner-wrapper{
+    height: 100%;
+    width: 100%;
+}
+.post-img img{
+    width: 300px;
+    height: 215px;
+    object-fit: cover;
+}
+.post{
+    width: 300px;
+}
+.post h2{
+    margin:24px 0 24px 0;
+    letter-spacing: 1px;
+    line-height: 24px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #3D4D4C;
+}
+.post label{
+    line-height: 22px;
+    font-size: 12px;
+    color: rgba(61, 77, 76, 0.75);
+}
+.post a{
+    text-decoration: none;
+}
+.read-more{
+    color: #3D4D4C;
+    letter-spacing: 2px;
+    font-size: 10px;
+    margin: 25px 0 0 0;
+    width: max-content;
+    border-bottom: 1px solid #F3B4A7;
+}

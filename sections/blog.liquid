@@ -1,17 +1,44 @@
-<div class="post-wrapper">
+{{ 'blog.scss' | asset_url | stylesheet_tag }}
+<div class="container">
+    <header>
+        <h5>Baza wiedzy</h5>
+    </header>
+    <div class="label">
+        <h1>{{ section.settings.heading-text }}</h1>
+    </div>
+    <div class="blog-wrapper blog-snaps">
+        {% for article in section.settings.blogID.articles %}
+            <div class="post-inner-wrapper">
+                <div class="post-img">
+                    <img src="{{ article.image | img_url:"medium" }}">
+                </div>
+                <div class="post">
+                    <h2>{{ article.title }}</h2>
+                    <label>{{ article.content }}</label>
+                    <a href="{{ article.url }}"><h3 class="read-more">CZYTAJ DALEJ</h3></a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
 </div>
-
-{% schema %}
-{
-    "name":"Blog",
-        "settings":[{
-            "type":"blog",
-            "id":"blogID",
-            "label":"Wybierz blog"
-        }],
-        "presets":[{
-        "name":"Blog",
-        "category":"Blog"
-        }]
-}
-{% endschema %}
+  
+  {% schema %}
+  {
+      "name":"Blog",
+          "settings":[{
+              "type":"blog",
+              "id":"blogID",
+              "label":"Wybierz blog"
+          },
+          {
+              "type":"text",
+              "label":"header",
+              "id":"heading-text"
+          }
+          ],
+          "presets":[{
+          "name":"Blog",
+          "category":"Blog"
+          }]
+  }
+  {% endschema %}
