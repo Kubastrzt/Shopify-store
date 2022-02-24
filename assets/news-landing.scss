@@ -28,6 +28,7 @@
 }
 .snap-product{
     scroll-snap-type: inline mandatory;
+    scroll-padding-inline: 20px;
 }
 .snap-product > *{
     scroll-snap-align: start;
