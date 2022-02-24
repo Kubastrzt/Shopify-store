@@ -2,17 +2,19 @@
     <h2>{{ section.settings.heading-collection }}</h2>
     <div class="products-outer-wrapper snap-product">
     {% for product in section.settings.new-collection.products %}
-        <a href="{{ product.url }}">
+        
             <div class="products-inner-wrapper">
                 <div class="products">
-                    <div class="product-img"><img src="{{ product.featured_image.src | image_url: width:300, crop:'center' }}"></div>
+                    <div class="product-img">
+                        <a href="{{ product.url }}"><img src="{{ product.featured_image.src | image_url: width:300, crop:'center' }}"></a>
+                    </div>
                         <div class="product-collection-title">{{ section.settings.new-collection.title }}</div>
                         <div class="product-title">{{ product.title }}</div>
                         <div class="product-price">{{ product.price | money }}</div>
                     
                 </div>
             </div> 
-        </a>
+        
     {% endfor %}
     </div>
 </div>
