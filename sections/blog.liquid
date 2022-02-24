@@ -1,0 +1,20 @@
+<div class="post-wrapper">
+    {% for blog.articles in section.settings.blogID %}
+        
+    {% endfor %}
+</div>
+
+{% schema %}
+{
+    "name":"Blog",
+        "settings":[{
+            "type":"blog",
+            "id":"blogID",
+            "label":"Wybierz blog"
+        }],
+        "presets":[{
+        "name":"Blog",
+        "category":"Blog"
+        }]
+}
+{% endschema %}
