@@ -1,0 +1,41 @@
+{{ 'credits.scss' | asset_url | stylesheet_tag }}
+<div class="additional-information-wrapper">
+    {% for block in section.blocks %}
+    <div class="item">
+        <div class="image"><img src="{{ block.settings.infoImg | img_url: 'medium' }}"></div>
+        <div class="content-wrapper">
+            <div class="title"><h2>{{ block.settings.infoTitle }}</h2></div>
+            <div class="description"><h4>{{ block.settings.infoDescription }}</h4></div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% schema %}
+{
+    "name":"Links",
+    "blocks":[{
+        "name":"Nowe informacje dodatkowe",
+        "type":"text",
+        "settings":[{
+            "label":"Zdjęcie do informacji",
+            "type":"image_picker",
+            "id":"infoImg"
+        },
+        {
+            "label":"Tytuł informacji",
+            "type":"richtext",
+            "id":"infoTitle"
+        },
+        {
+            "label":"Krótki opis",
+            "type":"text",
+            "id":"infoDescription"
+        }
+        ]
+    }],
+    "presets":[{
+        "name":"Dodatkowe informacje",
+        "category":"Dodatkowe informacje"
+    }]
+}
+{% endschema %}
