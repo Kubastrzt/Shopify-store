@@ -1,0 +1,16 @@
+{{ 'newsletter.scss' | asset_url | stylesheet_tag }}
+<div class="newsletter-wrapper">
+    <h4>Najnowsze produkty i specjalne promocje</h4>
+    <h1>Zapisz się do newslettera</h1>
+    <input type="email" placeholder="TWÓJ ADRES E-MAIL">
+    <h3>ZAPISZ SIĘ</h3>
+</div>
+{% schema %}
+{
+    "name":"Newsletter",
+    "presets":[{
+        "name":"Newsletter",
+        "category":"Newsletter"
+    }]
+}
+{% endschema %}
