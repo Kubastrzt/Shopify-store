@@ -36,7 +36,7 @@
         <h2>OBSERWUJ NAS</h2>
         {% for block in section.blocks %}
             {% if block.type =='social' %}
-                {{ block.settings.socialLogo | img_url: 'medium' }}
+                <a href="{{ block.settings.socialLink }}"><img src="{{ block.settings.socialLogo | img_url: 'medium' }}"></a>
             {% endif %}
         {% endfor %}
     </div>
