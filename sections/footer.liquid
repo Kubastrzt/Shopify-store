@@ -35,7 +35,7 @@
     <div class="pay-methods">
         <h2>PŁATNOŚCI</h2>
         {% for block in section.blocks %}
-            <img src="{{ block.settings.paymentLogo }}">
+            <img src="{{ block.settings.paymentLogo | img_url: 'medium' }}">
         {% endfor %}
     </div>
     <div class="copyrights">
