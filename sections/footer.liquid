@@ -11,19 +11,19 @@
     <div class="info-links">
         <h2>INFORMACJE</h2>
         {% for block in section.blocks %}
-            <a href="{{ block.settings.infoLink }}">{{ block.settings.linkLabel }}</a>
+            <a href="{{ block.settings.infoLink }}">{{ block.settings.linkLabel }}</a><br>
         {% endfor %}
     </div>
     <div class="short-info">
         <h2>KOKOSEK</h2>
         {% for block in section.blocks %}
-            <a href="{{ block.settings.kokosekLink }}">{{ block.settings.kokosekLabel }}</a>
+            <a href="{{ block.settings.kokosekLink }}">{{ block.settings.kokosekLabel }}</a><br>
         {% endfor %}
     </div>
     <div class="contact">
         <h2>KONTAKT</h2>
         {% for block in section.blocks %}
-            <h4>{{ block.settings.additionalContact }}</h4>
+            <h4>{{ block.settings.additionalContact }}</h4><br>
         {% endfor %}
     </div>
     <div class="social">
