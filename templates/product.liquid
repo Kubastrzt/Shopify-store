@@ -23,18 +23,18 @@
   <div class="variants">
     <div class="product-template" for="product-template">WZÓR</div>
     <div class="variants-inner">
-      {% for variant in product.variants %}
-        <img id="{{variant.id}}" onclick="selectedVariant(this.id)" src="{{ variant.image.src | img_url: 'medium' }}">
-      {% endfor %}
+      	{% for variant in product.variants %}
+        	<img id="{{variant.id}}" onclick="selectedVariant(this.id)" src="{{ variant.image.src | img_url: 'medium' }}">
+      	{% endfor %}
     </div>
   </div>
 {% form 'product', product %}
     <div class="product-size-wrapper">
       <div class="product-size" for="product-size">ROZMIAR</div>
       <select id="product-size" name="id">
-        {% for variant in product.variants %}
-            <option value="{{variant.id}}">{{ variant.option2 }}</option>
-        {% endfor %}
+        	{% for variant in product.variants %}
+            	<option value="{{variant.id}}">{{ variant.option2 }}</option>
+        	{% endfor %}
       </select>
     </div>
   <button type="submit" name="add" id="AddToCart">Add to cart</button>

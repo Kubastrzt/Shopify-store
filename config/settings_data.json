@@ -24,18 +24,136 @@
               "carousel-img": "shopify:\/\/shop_images\/landing.png",
               "img-content": "Pellentesque faucibus quis metus et elementum"
             }
+          },
+          "758e545e-3b83-4ef0-8bb4-92429fa7785c": {
+            "type": "image",
+            "settings": {
+              "carousel-img": "shopify:\/\/shop_images\/landing.png",
+              "img-content": "Pellentesque faucibus quis metus et elementum"
+            }
           }
         },
         "block_order": [
           "94f8080d-16fe-4387-8b8b-1757701ebb13",
-          "5848c7ef-99ae-446f-be73-da64d68e2edd"
+          "5848c7ef-99ae-446f-be73-da64d68e2edd",
+          "758e545e-3b83-4ef0-8bb4-92429fa7785c"
+        ],
+        "settings": {
+        }
+      },
+      "164521554163b99cf9": {
+        "type": "carousel",
+        "blocks": {
+          "f42ac5bc-ee8c-43f9-84ff-dbcdd2739b12": {
+            "type": "image",
+            "settings": {
+              "carousel-img": "shopify:\/\/shop_images\/landing.png",
+              "img-content": "Pellentesque faucibus quis metus et elementum"
+            }
+          },
+          "7790f7c9-f537-4450-9165-2d0f64b5b831": {
+            "type": "image",
+            "settings": {
+              "carousel-img": "shopify:\/\/shop_images\/landing.png",
+              "img-content": "Pellentesque faucibus quis metus et elementum"
+            }
+          },
+          "8f604129-6c53-40bb-bce0-72fab136df8b": {
+            "type": "image",
+            "settings": {
+              "carousel-img": "shopify:\/\/shop_images\/landing.png",
+              "img-content": "Pellentesque faucibus quis metus et elementum"
+            }
+          }
+        },
+        "block_order": [
+          "f42ac5bc-ee8c-43f9-84ff-dbcdd2739b12",
+          "7790f7c9-f537-4450-9165-2d0f64b5b831",
+          "8f604129-6c53-40bb-bce0-72fab136df8b"
+        ],
+        "settings": {
+        }
+      },
+      "1645378412c37f727d": {
+        "type": "news-landing",
+        "settings": {
+          "new-collection": "plan-toys",
+          "heading-collection": "NOWOŚCI"
+        }
+      },
+      "16454727824b68bd4c": {
+        "type": "text-image",
+        "settings": {
+          "background": "shopify:\/\/shop_images\/b.png",
+          "tekst": "Ubranka dla niemowlaka",
+          "add-button": true
+        }
+      },
+      "16457302636ed73def": {
+        "type": "blog",
+        "settings": {
+          "blogID": "news",
+          "heading-text": "Sprawdź naszego bloga"
+        }
+      },
+      "1645974177bc4da77b": {
+        "type": "newsletter",
+        "settings": {
+        }
+      },
+      "16459907792f4e7a25": {
+        "type": "credits",
+        "blocks": {
+          "6489cef5-0761-4b1c-89d6-e3e571a38db4": {
+            "type": "text",
+            "settings": {
+              "infoImg": "shopify:\/\/shop_images\/quality.png",
+              "infoTitle": "<p>Produkty <br\/><strong>najwyższej<\/strong> jakości<\/p>",
+              "infoDescription": "Produkowane w Europie z dbałością o szczegóły"
+            }
+          },
+          "cbc13033-999c-4dfa-a696-8cf000678d61": {
+            "type": "text",
+            "settings": {
+              "infoImg": "shopify:\/\/shop_images\/hearth.png",
+              "infoTitle": "<p>Wyselekcjonowane<br\/><strong>z miłością<\/strong><\/p>",
+              "infoDescription": "Przez rodziców, dla rodziców"
+            }
+          },
+          "e0270d3c-c35b-403c-957c-0d82ebe4a366": {
+            "type": "text",
+            "settings": {
+              "infoImg": "shopify:\/\/shop_images\/safe.png",
+              "infoTitle": "<p><strong>Bezpieczne<\/strong> <br\/>płatności on-line<\/p>",
+              "infoDescription": "BLIK,  PayLane, Karta płatnicza"
+            }
+          },
+          "caa0d5f2-2c14-40ae-925b-451948b80596": {
+            "type": "text",
+            "settings": {
+              "infoImg": "shopify:\/\/shop_images\/quick.png",
+              "infoTitle": "<p><strong>Szybka <\/strong><br\/>wysyłka<\/p>",
+              "infoDescription": "Zamówienia złożone do godziny 13 realizujemy tego samego dnia"
+            }
+          }
+        },
+        "block_order": [
+          "6489cef5-0761-4b1c-89d6-e3e571a38db4",
+          "cbc13033-999c-4dfa-a696-8cf000678d61",
+          "e0270d3c-c35b-403c-957c-0d82ebe4a366",
+          "caa0d5f2-2c14-40ae-925b-451948b80596"
         ],
         "settings": {
         }
       }
     },
     "content_for_index": [
-
+      "164521554163b99cf9",
+      "1645378412c37f727d",
+      "16454727824b68bd4c",
+      "16457302636ed73def",
+      "1645974177bc4da77b",
+      "16459907792f4e7a25"
     ]
   },
   "presets": {

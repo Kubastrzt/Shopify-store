@@ -1,5 +1,5 @@
 .newsletter-wrapper{
-    background: url(/assets/newsletter.png);
+  	position: relative;
     width: 100%;
     height: 362px;
     padding: 0 20px;
@@ -8,6 +8,14 @@
     align-items: center;
     justify-content: center;
     text-align: center;
+}
+.newsletter-wrapper img{
+	position: absolute;
+  	top: 0;
+  	z-index:-1;
+  	width:100%;
+  	height:362px;
+  	object-fit:cover;
 }
 .newsletter-wrapper h4{
     color: #527D78;
