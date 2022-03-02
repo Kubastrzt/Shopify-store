@@ -18,7 +18,7 @@
   <div class="general-info-wrapper">
     <label>{{ product.collections.first.title }}</label>
     <h1>{{ product.title }}</h1>
-    <h3>{{ product.price | money }}</h3>
+    <h3>{{ current_variant.price | money }}</h3>
   </div>
   <div class="variants">
     <div class="product-template" for="product-template">WZÓR</div>
@@ -37,15 +37,45 @@
         	{% endfor %}
       </select>
     </div>
-  <button type="submit" name="add" id="AddToCart">Add to cart</button>
+    <div class="product-description">
+      {{ product.description }}
+    </div>
+    <div for="Quantity" class="quantity-label">ILOŚĆ</div>
+    <div class="quantity-wrapper">
+      <div class="minus">-</div>
+      <input type="number" id="Quantity" name="quantity" value="1" min="1">
+      <div class="plus">+</div>
+    </div>
+    <button type="submit" name="add" id="AddToCart">DODAJ DO KOSZYKA</button>
 {% endform %}
-  {{ current_variant.price | money }}
-  <label for="Quantity">quantity</label>
-  <input type="number" id="Quantity" name="quantity" value="1" min="1">
-<div>{{ product.description }}</div>
+    <div class="additional-information dropdown">
+      <span>Dodatkowe informacje</span>
+      <div class="symbol">
+        <div class="vertical"></div>
+        <div class="horizontal"></div>
+      </div>
+      <div class="additional-information-content content">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, repudiandae.
+      </div>
+    </div>
+    <div class="return-shipment dropdown">
+      <span>Wysyłka i zwroty</span>
+      <div class="symbol">
+        <div class="vertical"></div>
+        <div class="horizontal"></div>
+      </div>
+      <div class="return-shipment-content content">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, repudiandae.
+      </div>
+    </div>
 </div>
+  {% section 'news-landing' %}  
+  {% section 'newsletter' %}
+  {% section 'credits' %}
+  {% section 'footer' %}
 <script>
   
+
 var x
 var y
 window.onerror = function(message, url, lineNumber) {  
@@ -53,11 +83,11 @@ window.onerror = function(message, url, lineNumber) {
 };
 
 function scroller() {
-    var elmnt = document.querySelector(".slider")
+    var elmnt = document.querySelector(".carousel")
     x = elmnt.scrollLeft
     var stala=100;
     var viewportWidth=window.innerWidth;
-    const dots= document.querySelectorAll('.slider-dots')
+    const dots= document.querySelectorAll('.slide-dots')
     dots[0].classList.add('dots-addon')
     for(var sliderLength=1;sliderLength<=dots.length;sliderLength++)
     {
@@ -73,6 +103,8 @@ function scroller() {
   }
 
 window.setInterval('scroller()',100)
+
+
 
 var globalID
 var oldGlobalID
@@ -105,4 +137,36 @@ variantObject.forEach(button => {
     variant.showThumbnail()
   }) 
 });
+
+const minusBtn=document.querySelector('.minus')
+const plusBtn=document.querySelector('.plus')
+const quantity=document.querySelector('#Quantity')
+
+minusBtn.addEventListener('click', ()=> {
+  if(quantity.value>=2){
+    quantity.value-=1
+  }
+  else return
+})
+plusBtn.addEventListener('click', ()=> {
+  quantity.value++
+  
+})
+
+
+const dropdown=document.querySelectorAll('.dropdown')
+const content=document.querySelectorAll('.content')
+
+
+dropdown[0].addEventListener('click', ()=> {
+  dropdown[0].classList.toggle('drop')
+  content[0].classList.toggle('show')
+})
+
+dropdown[1].addEventListener('click', ()=> {
+  dropdown[1].classList.toggle('drop')
+  content[1].classList.toggle('show')
+})
+
+
 </script>
