@@ -1,14 +1,37 @@
-{% paginate collection.products by 2 %}
-  {{collection.title}}<br>
-  {% if collection.image %}
-    {{ collection.image | img_url: "medium" | img_tag}}
-  {% endif %}
-  <br><br><br>
-  {% for product in collection.products %}
-    {{ product.title }}
-    <br>
-      <img src="{{ product.featured_image.src | img_url: 300x300 }}" alt="{{ product.featured_image.alt | escape }}">
-      <a href="{{ product.url | within: collection }}">Zobacz bliżej</a>
-      <br>
-  {% endfor %}
+{{ 'collecion.scss' | asset_url | stylesheet_tag }}
+
+{% paginate collections.all.products by 4 %}
+  <div class="collection-wrapper">
+    {% for product in collections.all.products %}
+        <div class="product-tab">
+          <div class="product-img">
+            <a href="{{ product.url }}"><img src="{{ product.featured_image.src | img_url :"medium" crop :'center' }}"></a>
+          </div>
+          <div class="product-collection-title">{{ collection.title }}</div>
+          <div class="product-title">{{ product.title }}</div>
+          <div class="product-price">
+            {{ product.price | money }}
+            {% if product.compare_at_price_max > product.price %}
+              <span>{{ product.compare_at_price_max | money }}</span>
+            {% endif %}
+          </div>
+        </div>
+    {% endfor %}
+  </div> 
+  <div class="collection-pagination">
+    {% for part in paginate.parts %}
+      <a href="{{ part.url }}">{{ part.title }}</a>
+    {% endfor %}
+  </div>
 {% endpaginate %}
+{% section 'newsletter' %}
+{% section 'credits' %}
+{% section 'footer' %}
+<div class="filters-categories-wrapper">
+  <div class="filter">
+    <a href="">FLITRY</a>
+  </div>
+  <div class="category">
+    <a href="">KATEGORIE</a>
+  </div>
+</div>

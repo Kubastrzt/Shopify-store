@@ -1,3 +1,4 @@
+{{ 'news-landing.scss' | asset_url | stylesheet_tag }}
 <div class="landing-news">
     <h2>{{ section.settings.heading-collection }}</h2>
     <div class="products-outer-wrapper snap-product">
@@ -22,7 +23,7 @@
 
 {% schema %}
 {
-"name":"Products",
+"name":"Collection",
 "settings":[{
     "type":"collection",
     "id":"new-collection",
@@ -35,7 +36,7 @@
 }
 ],
 "presets":[{
-    "name":"Nowości- kolekcja",
+    "name":"Kolekcja",
     "category":"collection"
 }]
 }
