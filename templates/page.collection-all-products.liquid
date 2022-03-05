@@ -8,7 +8,7 @@
               <a href="{{ product.url }}"><img src="{{ product.featured_image.src | img_url :"medium" crop :'center' }}"></a>
             </div>
             <div class="product-collection-title">{{ collection.title }}</div>
-            <div class="product-title">{{ product.title }}</div>
+            <div class="product-title">{{ product.title }}, {{ product.tags }}</div>
             <div class="product-price">
               {{ product.price | money }}
               {% if product.compare_at_price_max > product.price %}
@@ -17,9 +17,6 @@
             </div>
           </div>
     {% endfor %}
-        {%if products.tag == sort_by %}
-        elo
-        {% endif %}
   </div> 
   <div class="collection-pagination">
     {% for part in paginate.parts %}

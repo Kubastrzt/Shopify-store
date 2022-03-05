@@ -1,0 +1,128 @@
+.container{
+    padding: 20px 24px;
+    width: 100%;
+    border-top: 1px solid #3D4D4C15;
+}
+.heading{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+.heading h1{
+    text-align: center;
+    color: #3D4D4C;
+    font-size: 18px;
+    letter-spacing: 2px;
+    font-weight: normal;
+    border-bottom: 1px solid #F3B4A7;
+}
+.cart-product-img{
+    width: 120px;
+    height: 152px;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cart-product-img img{
+    object-fit: cover;
+    width: 120px;
+}
+.cart-product-title{
+    width : 175px;
+    overflow:hidden;
+    display:inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin: 0 0 0 20px;
+    padding: 0 0 6px 0;
+    letter-spacing: 1px;
+    line-height: 18px;
+    font-size: 11px;
+    border-bottom: 1px solid #F3B4A7;
+    text-transform: uppercase;
+    word-break: keep-all;
+}
+.cart-product-title a{
+    text-decoration: none;
+    color: #3D4D4C;
+}
+.cart-product-variant{
+    letter-spacing: 1.8px;
+    font-size: 11px;
+    margin: 0 0 0 20px;
+    text-transform: uppercase;
+    color: #3D4D4C;
+}
+.cart-product-price{
+    color: #527D78;
+    letter-spacing: 1px;
+    font-size: 18px;
+    margin: 0 0 0 20px;
+    padding: 29px 0 0 0;
+}
+.quantity-and-remove {
+    display: flex;
+    margin: 0 0 0 20px;
+}
+.quantity-and-remove input{
+    width: 30px;
+    height: max-content;
+    text-align: center;
+    border: none;
+    color: #3D4D4C;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+.quantity-wrapper{
+    display: flex;
+    border: 1px solid #E2E5E4;
+    width: 120px;
+    height: 44px;
+    align-items: center;
+    margin-right: 24px;
+}
+.quantity-and-remove a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #3D4D4C75;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    border-bottom: 1px solid #00000025;
+}
+.minus{
+    width:40px;
+    height: auto;
+    text-align: center;
+    color: #527D78;
+}
+.plus{
+    width: 50px;
+    height: auto;
+    text-align: center;
+    color: #527D78;
+}
+.input{
+    display: flex;
+    align-items: center;
+}
+.quant{
+    font-size: 11px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.quant::after{
+    content: 'SZT.';
+    font-size: 11px;
+}
+button{
+    border: none;
+    background-color: transparent;
+}
+table{
+    padding: 24px 0;
+    border-bottom: 1px solid #3D4D4C15;
+}
