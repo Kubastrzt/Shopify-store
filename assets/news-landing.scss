@@ -18,6 +18,7 @@
     overflow-y:hidden;
     display: grid;
     grid-auto-flow: column;
+  	padding: 0 0 0 20px;
 }
 .products-outer-wrapper::-webkit-scrollbar{
 	display: none;
@@ -46,7 +47,7 @@
 }
 .products-inner-wrapper{
     height: 528px;
-    padding: 0 0 0 20px;
+    padding: 0 20px 0 0;
 }
 .product-collection-title{
     color:#527D78;

@@ -145,6 +145,371 @@
         ],
         "settings": {
         }
+      },
+      "16460728660708b17b": {
+        "type": "footer",
+        "blocks": {
+          "1337d77c-7ce9-427c-8606-59da728c93ee": {
+            "type": "link_list",
+            "settings": {
+              "infoLink": "",
+              "linkLabel": "Płatności i dostawa"
+            }
+          },
+          "4fafa30c-a2bd-403a-a000-42502305689b": {
+            "type": "link_list",
+            "settings": {
+              "infoLink": "",
+              "linkLabel": "Regulamin sklepu"
+            }
+          },
+          "d350d810-d42c-4bf0-86cd-dce9cc95b31b": {
+            "type": "link_list",
+            "settings": {
+              "infoLink": "",
+              "linkLabel": "Polityka prywatności"
+            }
+          },
+          "e8bc6b08-2e6e-4f62-89b2-ee8255c49aac": {
+            "type": "link_list",
+            "settings": {
+              "infoLink": "",
+              "linkLabel": "Wymiana i zwroty"
+            }
+          },
+          "2bf9dc05-2002-4b7e-9bb4-586495c91b00": {
+            "type": "link_list",
+            "settings": {
+              "infoLink": "",
+              "linkLabel": "Reklamacje"
+            }
+          },
+          "35e97692-766a-4082-8804-bc9d2e9718f5": {
+            "type": "link_list",
+            "settings": {
+              "infoLink": "",
+              "linkLabel": "FAQ"
+            }
+          },
+          "a7acd4da-f1fe-42d8-a9e8-035a8c7233f6": {
+            "type": "text",
+            "settings": {
+              "kokosekLink": "",
+              "kokosekLabel": "O nas"
+            }
+          },
+          "f7c1597e-3607-434d-9e8d-becbc173a236": {
+            "type": "text",
+            "settings": {
+              "kokosekLink": "",
+              "kokosekLabel": "Blog"
+            }
+          },
+          "5b10a4a1-69e0-48ff-a193-5fbe74915c7d": {
+            "type": "text",
+            "settings": {
+              "kokosekLink": "",
+              "kokosekLabel": "Kontakt"
+            }
+          },
+          "044c4f39-173a-43b4-9ac8-7ff86bcee2ae": {
+            "type": "contact",
+            "settings": {
+              "additionalContact": "hello@kokosek.pl"
+            }
+          },
+          "65106f48-fe00-41b0-88c1-f13240cb3b9d": {
+            "type": "contact",
+            "settings": {
+              "additionalContact": "+48 600 700 800"
+            }
+          },
+          "3582597d-2399-450f-a11b-fae90d94d122": {
+            "type": "social",
+            "settings": {
+              "socialLogo": "shopify:\/\/shop_images\/Group_4.png",
+              "socialLink": ""
+            }
+          },
+          "a4e46318-e1be-425b-a7c1-37cb5bf9f688": {
+            "type": "social",
+            "settings": {
+              "socialLogo": "shopify:\/\/shop_images\/003-instagram-1.png",
+              "socialLink": ""
+            }
+          },
+          "eecf4d95-f1ec-4e15-9c32-bafce48e2508": {
+            "type": "social",
+            "settings": {
+              "socialLogo": "shopify:\/\/shop_images\/001-pinterest-1.png",
+              "socialLink": ""
+            }
+          },
+          "49bee173-6bbe-4c23-aaf3-ef361357b1e0": {
+            "type": "payments",
+            "settings": {
+              "paymentLogo": "shopify:\/\/shop_images\/payu.png"
+            }
+          },
+          "dafd686e-4c04-461b-9fdf-6ee0df10cff4": {
+            "type": "payments",
+            "settings": {
+              "paymentLogo": "shopify:\/\/shop_images\/blik.png"
+            }
+          },
+          "0820f991-22e0-4cf0-8a50-2e76688ed912": {
+            "type": "payments",
+            "settings": {
+              "paymentLogo": "shopify:\/\/shop_images\/mc.png"
+            }
+          },
+          "c24215f6-8b84-45b7-a3fb-e2f9ac47c762": {
+            "type": "payments",
+            "settings": {
+              "paymentLogo": "shopify:\/\/shop_images\/visa.png"
+            }
+          },
+          "8e7c9ac9-7de9-4761-a9ae-688df1b41ec5": {
+            "type": "payments",
+            "settings": {
+              "paymentLogo": "shopify:\/\/shop_images\/paypal.png"
+            }
+          }
+        },
+        "block_order": [
+          "1337d77c-7ce9-427c-8606-59da728c93ee",
+          "4fafa30c-a2bd-403a-a000-42502305689b",
+          "d350d810-d42c-4bf0-86cd-dce9cc95b31b",
+          "e8bc6b08-2e6e-4f62-89b2-ee8255c49aac",
+          "2bf9dc05-2002-4b7e-9bb4-586495c91b00",
+          "35e97692-766a-4082-8804-bc9d2e9718f5",
+          "a7acd4da-f1fe-42d8-a9e8-035a8c7233f6",
+          "f7c1597e-3607-434d-9e8d-becbc173a236",
+          "5b10a4a1-69e0-48ff-a193-5fbe74915c7d",
+          "044c4f39-173a-43b4-9ac8-7ff86bcee2ae",
+          "65106f48-fe00-41b0-88c1-f13240cb3b9d",
+          "3582597d-2399-450f-a11b-fae90d94d122",
+          "a4e46318-e1be-425b-a7c1-37cb5bf9f688",
+          "eecf4d95-f1ec-4e15-9c32-bafce48e2508",
+          "49bee173-6bbe-4c23-aaf3-ef361357b1e0",
+          "dafd686e-4c04-461b-9fdf-6ee0df10cff4",
+          "0820f991-22e0-4cf0-8a50-2e76688ed912",
+          "c24215f6-8b84-45b7-a3fb-e2f9ac47c762",
+          "8e7c9ac9-7de9-4761-a9ae-688df1b41ec5"
+        ],
+        "settings": {
+        }
+      },
+      "news-landing": {
+        "type": "news-landing",
+        "settings": {
+          "new-collection": "plan-toys",
+          "heading-collection": "POWIĄZANE PRODUKTY"
+        }
+      },
+      "newsletter": {
+        "type": "newsletter",
+        "settings": {
+        }
+      },
+      "credits": {
+        "type": "credits",
+        "blocks": {
+          "5e211c12-1557-40c7-be22-4c1bb9a6a2c5": {
+            "type": "text",
+            "settings": {
+              "infoImg": "shopify:\/\/shop_images\/quality.png",
+              "infoTitle": "<p><strong>Produkty<\/strong><\/p><p>najwyższej jakości<\/p>",
+              "infoDescription": "Produkowane w Europie z dbałością o szczegóły"
+            }
+          },
+          "c5eab747-e84c-4289-8c0b-39cca9aa7057": {
+            "type": "text",
+            "settings": {
+              "infoImg": "shopify:\/\/shop_images\/hearth.png",
+              "infoTitle": "<p>Wyselekcjonowane <\/p><p><strong>z miłością<\/strong><\/p>",
+              "infoDescription": "Przez rodziców, dla rodziców"
+            }
+          },
+          "c01ad351-64fd-43ed-8863-e3a1d634ce47": {
+            "type": "text",
+            "settings": {
+              "infoImg": "shopify:\/\/shop_images\/safe.png",
+              "infoTitle": "<p><strong>Bezpieczne<\/strong> <\/p><p>płatności on-line<\/p>",
+              "infoDescription": "BLIK,  PayLane, Karta płatnicza"
+            }
+          },
+          "290a364b-cd5a-4fac-99f6-2dc8d80c6382": {
+            "type": "text",
+            "settings": {
+              "infoImg": "shopify:\/\/shop_images\/quick.png",
+              "infoTitle": "<p><strong>Szybka<\/strong> <\/p><p>wysyłka<\/p>",
+              "infoDescription": "Zamówienia złożone do godziny 13 realizujemy tego samego dnia"
+            }
+          }
+        },
+        "block_order": [
+          "5e211c12-1557-40c7-be22-4c1bb9a6a2c5",
+          "c5eab747-e84c-4289-8c0b-39cca9aa7057",
+          "c01ad351-64fd-43ed-8863-e3a1d634ce47",
+          "290a364b-cd5a-4fac-99f6-2dc8d80c6382"
+        ],
+        "settings": {
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "320626b0-272a-4e4d-9459-7e36d76e64c1": {
+            "type": "link_list",
+            "settings": {
+              "infoLink": "",
+              "linkLabel": "Płatności i dostawa"
+            }
+          },
+          "3ff7a0c4-ae2f-40cb-9b3b-e3313af34e8d": {
+            "type": "link_list",
+            "settings": {
+              "infoLink": "",
+              "linkLabel": "Regulamin sklepu"
+            }
+          },
+          "74667a22-268d-4f41-bd6f-3e7eff8ccece": {
+            "type": "link_list",
+            "settings": {
+              "infoLink": "",
+              "linkLabel": "Polityka prywatności"
+            }
+          },
+          "7fe5482b-b4d0-478d-a32b-f735de5eb6ce": {
+            "type": "link_list",
+            "settings": {
+              "infoLink": "",
+              "linkLabel": "Wymiana i zwroty"
+            }
+          },
+          "2ec2b08e-8257-4bf9-8fce-82a7c4e7f17f": {
+            "type": "link_list",
+            "settings": {
+              "infoLink": "",
+              "linkLabel": "Reklamacje"
+            }
+          },
+          "97f4b884-c575-407f-b387-6683259fb8c0": {
+            "type": "link_list",
+            "settings": {
+              "infoLink": "",
+              "linkLabel": "FAQ"
+            }
+          },
+          "c6568e5a-957d-4e8c-aa69-4676b83aec5f": {
+            "type": "text",
+            "settings": {
+              "kokosekLink": "",
+              "kokosekLabel": "O nas"
+            }
+          },
+          "9ad79e29-1177-451f-9db4-77759729e576": {
+            "type": "text",
+            "settings": {
+              "kokosekLink": "",
+              "kokosekLabel": "Blog"
+            }
+          },
+          "3c9e3192-9a6e-4122-9667-c72c6eaea55a": {
+            "type": "text",
+            "settings": {
+              "kokosekLink": "",
+              "kokosekLabel": "Kontakt"
+            }
+          },
+          "28f49b2c-c118-4981-9fd4-7cbc08d530a9": {
+            "type": "contact",
+            "settings": {
+              "additionalContact": "hello@kokosek.pl"
+            }
+          },
+          "70285a66-04f0-42ce-838b-44fb6d12fe53": {
+            "type": "contact",
+            "settings": {
+              "additionalContact": "+48 600 700 800"
+            }
+          },
+          "55d03833-c3a3-46da-b1f0-aa8f0aeca032": {
+            "type": "social",
+            "settings": {
+              "socialLogo": "shopify:\/\/shop_images\/Group_4.png",
+              "socialLink": ""
+            }
+          },
+          "79112f07-257f-49d8-be4c-8fe98e7c3bd1": {
+            "type": "social",
+            "settings": {
+              "socialLogo": "shopify:\/\/shop_images\/003-instagram-1.png",
+              "socialLink": ""
+            }
+          },
+          "484cbc0b-f8bf-4f1a-9560-8b94c33ce369": {
+            "type": "social",
+            "settings": {
+              "socialLogo": "shopify:\/\/shop_images\/001-pinterest-1.png",
+              "socialLink": ""
+            }
+          },
+          "bb228867-2bc9-42e3-8b6b-fd3548cff196": {
+            "type": "payments",
+            "settings": {
+              "paymentLogo": "shopify:\/\/shop_images\/payu.png"
+            }
+          },
+          "745154e9-5a0e-4440-8b6a-4553f96b1a36": {
+            "type": "payments",
+            "settings": {
+              "paymentLogo": "shopify:\/\/shop_images\/blik.png"
+            }
+          },
+          "b66e6d85-8a17-45c5-8d70-75caba19790b": {
+            "type": "payments",
+            "settings": {
+              "paymentLogo": "shopify:\/\/shop_images\/mc.png"
+            }
+          },
+          "74175f5c-1b61-4b94-a81b-c2d5df9af26e": {
+            "type": "payments",
+            "settings": {
+              "paymentLogo": "shopify:\/\/shop_images\/visa.png"
+            }
+          },
+          "d77a94a0-e96b-47ea-8f95-78915d2b8e4d": {
+            "type": "payments",
+            "settings": {
+              "paymentLogo": "shopify:\/\/shop_images\/paypal.png"
+            }
+          }
+        },
+        "block_order": [
+          "320626b0-272a-4e4d-9459-7e36d76e64c1",
+          "3ff7a0c4-ae2f-40cb-9b3b-e3313af34e8d",
+          "74667a22-268d-4f41-bd6f-3e7eff8ccece",
+          "7fe5482b-b4d0-478d-a32b-f735de5eb6ce",
+          "2ec2b08e-8257-4bf9-8fce-82a7c4e7f17f",
+          "97f4b884-c575-407f-b387-6683259fb8c0",
+          "c6568e5a-957d-4e8c-aa69-4676b83aec5f",
+          "9ad79e29-1177-451f-9db4-77759729e576",
+          "3c9e3192-9a6e-4122-9667-c72c6eaea55a",
+          "28f49b2c-c118-4981-9fd4-7cbc08d530a9",
+          "70285a66-04f0-42ce-838b-44fb6d12fe53",
+          "55d03833-c3a3-46da-b1f0-aa8f0aeca032",
+          "79112f07-257f-49d8-be4c-8fe98e7c3bd1",
+          "484cbc0b-f8bf-4f1a-9560-8b94c33ce369",
+          "bb228867-2bc9-42e3-8b6b-fd3548cff196",
+          "745154e9-5a0e-4440-8b6a-4553f96b1a36",
+          "b66e6d85-8a17-45c5-8d70-75caba19790b",
+          "74175f5c-1b61-4b94-a81b-c2d5df9af26e",
+          "d77a94a0-e96b-47ea-8f95-78915d2b8e4d"
+        ],
+        "settings": {
+        }
       }
     },
     "content_for_index": [
@@ -153,7 +518,8 @@
       "16454727824b68bd4c",
       "16457302636ed73def",
       "1645974177bc4da77b",
-      "16459907792f4e7a25"
+      "16459907792f4e7a25",
+      "16460728660708b17b"
     ]
   },
   "presets": {
