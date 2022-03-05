@@ -68,17 +68,19 @@
     align-items: center;
 }
 .filter{
+    display: flex;
     grid-column: 1;
     border-right: 1px solid #3D4D4C15;
     justify-content: center;
     align-items: center;
-    text-align: center;
+    height: 100%;
 }
 .category{
+    display: flex;
     grid-column: 2;
     justify-content: center;
     align-items: center;
-    text-align: center;
+    height: 100%;
 }
 .filter a,.category a{
     font-size: 11px;
@@ -86,4 +88,22 @@
     letter-spacing: 2px;
     text-decoration: none;
     color: #3D4D4C;
+}
+.listing{
+    height: 200px;
+    width: 100%;
+    padding: 20px;
+    display: none;
+}
+.showed{
+    display: block;
+}
+.tags{
+    display: flex;
+    align-items: center;
+    margin: 0 0 20px 0;
+}
+.tags input{
+    margin: 0 10px 0 0;
+    width: 15px;
 }
