@@ -108,14 +108,7 @@
     display: flex;
     align-items: center;
 }
-.quant{
-    font-size: 11px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.quant::after{
-    content: 'SZT.';
+.quantity-wrapper span{
     font-size: 11px;
 }
 button{
@@ -125,4 +118,68 @@ button{
 table{
     padding: 24px 0;
     border-bottom: 1px solid #3D4D4C15;
+}
+.baner{
+    margin: 24px 0 50px;
+    border-radius: 4px;
+    background-color: #ECF3F2;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 44px;
+}
+.baner p{ 
+    color: #3D4D4C75;
+    line-height: 24px;
+    font-size: 12px;
+}
+.sum, .send{
+    position: relative;
+    margin: 0 0 24px 0;
+}
+.sum span:nth-child(1), .send span:nth-child(1){
+    color: #3D4D4C;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+.cost{
+    position: absolute;
+    color: #527D78;
+    right: 0;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+#free{
+    margin: 7px 0 0 0;
+    color:#3D4D4C50;
+    font-size: 11px;
+    font-weight: normal;
+    right: 0;
+    position: absolute;
+}
+.gift{
+    margin: 48px 0 0 0;
+    padding: 0 0 24px 0;
+    position: relative;
+    border-bottom: 1px solid #3D4D4C15;
+}
+#gift{
+    border: 1px solid #E2E5E4;
+    margin-right: 12px;
+}
+.gift label{
+    color: #3D4D4C75;
+    font-size: 14px;
+    line-height: 24px;   
+}
+.gift span{
+    position: absolute;
+    color: #527D7830;
+    right: 0;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+.turned-on{
+    color: #527D78;
 }

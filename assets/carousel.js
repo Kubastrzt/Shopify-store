@@ -1,6 +1,7 @@
 
 var x
 var y
+
 window.onerror = function(message, url, lineNumber) {  
     return true; 
 };

@@ -1,6 +1,6 @@
 
   {{ 'carousel.scss' | asset_url | stylesheet_tag }}
-<div class="carousel-container" id="carousel-container">
+<div onload="scroller()" class="carousel-container" id="carousel-container">
     <div class="carousel snap-carousel">
         {% for block in section.blocks %}
         <div class="slide">

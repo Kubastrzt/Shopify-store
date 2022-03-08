@@ -42,8 +42,8 @@
           <td>
             <div class="quantity-and-remove">
               <div class="quantity-wrapper">
-                <button type="submit" name="update" class="minus">-</button>
-                  <div class="quant"><input type="number" name="updates[]" id="updates_{{ item.key }}" class="updates" value="{{ item.quantity }}" min="0"></div>
+                <button type="submit" name="update" class="minus" id="{{ item.product.id }}">-</button>
+                <input type="number" name="updates[]" id="updates_{{ item.key }}" class="updates" value="{{ item.quantity }}" min="0"><span>SZT.</span>
                 <button type="submit" name="update" class="plus">+</button>
               </div>
               <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0">USUŃ</a>
@@ -53,53 +53,34 @@
       </thead>
     </table>
     {% endfor %}
+    <div class="baner">
+      <p>Kod rabatowy można wprowadzić w następnym kroku</p>
+    </div>
     <div>
-     
       <div class="sum">
         <span>PRODUKTY</span>
-        <span id="total">{{ cart.total_price | money }}</span>
+        <span class="cost">{{ cart.items_subtotal_price | money }}</span>
       </div>
       <div class="send">
         <span>WYSYŁKA</span>
-          {% if cart.total_price >= 50000 | money %}
-          <span>{{ '0' | money }}</span>
-          {% else %}
-          <span>{{ '2000' | money }}</span><br>
-          <span>Brakuje {{ cart.total_price | minus: 50000 | times: -1 | money }} do darmowej wysyłki</span>
-          {%endif%}
+          <span class="cost">{{ checkout.shipping_price| money }}</span><br>
+          {% unless cart.items_subtotal_price <= 50000 %}
+          <h5 id="free">Brakuje {{ cart.items_subtotal_price | minus: 50000 | times: -1 | money }} do darmowej wysyłki</h5>
+          {% endunless %}
       </div>
       <div class="gift">
         <label for="gift">
         <input type="checkbox" id="gift" name="gift" onclick="check()">Pakowanie na prezent
         </label>
-        <div class="span">+ 15 zł</div>
-        <script>
-          const giftCheckbox = document.getElementById('gift')
-          const total=document.getElementById('total')
-          function check(){
-          if(giftCheckbox.checked==1){
-            total.innerHTML="{{ cart.total_price | plus: 1500 | money }}"
-          }
-          else 
-            total.innerHTML="{{ cart.total_price | money }}"
-          }
-
-
-          const minusBtn=document.querySelector('.minus')
-          const plusBtn=document.querySelector('.plus')
-          const quantity=document.querySelector('.updates')
-
-          minusBtn.addEventListener('click', ()=> {
-            if(quantity.value>=2){
-              quantity.value-=1
-            }
-            else return
-          })
-          plusBtn.addEventListener('click', ()=> {
-            quantity.value++
-            
-          })
-        </script>
+        <span>+ 15 zł</span>
+      </div>
+      <div class="sum-up">
+        <span>SUMA</span>
+        <span>
+          {% if cart.items_subtotal_price <= 50000 and  | money %}
+          {{ cart.total_price | plus: 2000 | money }}
+          {% endif %}
+        </span>
       </div>
       <button type="submit" name="update">Update</button>
       <button type="submit" name="checkout">Checkout</button>
@@ -110,3 +91,42 @@
   Cart is empty
 {% endif %}
 </div>
+<script>
+  const giftCheckbox = document.getElementById('gift')
+  const total=document.getElementById('total')
+  function check(){
+  if(giftCheckbox.checked==1){
+    total.innerHTML="{{ cart.total_price | plus: 1500 | money }}"
+  }
+  else 
+    total.innerHTML="{{ cart.total_price | money }}"
+  }
+
+  const minusButton=document.getElementsByClassName('minus')
+  const plusButton=document.getElementsByClassName('plus')
+
+  for(var i = 0; i < plusButton.length; i++ ){
+    var button = plusButton[i]
+    button.addEventListener('click', function(event) {
+        var buttonClicked = event.target;
+        var input = buttonClicked.parentElement.children[1]
+        var inputValue = input.value
+        var newValue = parseInt(inputValue)+1
+        input.value = newValue
+    })
+  }
+  for(var i = 0; i < minusButton.length; i++ ){
+    var button = minusButton[i]
+    button.addEventListener('click', function(event) {
+        var buttonClicked = event.target;
+        var input = buttonClicked.parentElement.children[1]
+        var inputValue = input.value
+        var newValue = parseInt(inputValue)-1
+        
+        if(input.value >= 2){
+          input.value = newValue
+        }
+        else return
+    })
+  }
+</script>
