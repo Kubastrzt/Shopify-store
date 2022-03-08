@@ -25,9 +25,7 @@
         <tr>
           <td>
             <div class="cart-product-variant">
-            {% if item contains variant %}
               {{ item.variant.title }}
-              {%endif%}
             </div>
           </td>
         </tr>
@@ -63,43 +61,62 @@
       </div>
       <div class="send">
         <span>WYSYŁKA</span>
-          <span class="cost">{{ checkout.shipping_price| money }}</span><br>
-          {% unless cart.items_subtotal_price <= 50000 %}
-          <h5 id="free">Brakuje {{ cart.items_subtotal_price | minus: 50000 | times: -1 | money }} do darmowej wysyłki</h5>
-          {% endunless %}
+        {% if cart.items_subtotal_price <= 50000 %}
+        <span class="cost">{{ '2000' | money }}</span><br>
+        {% else %}
+        <span class="cost">{{ '0' | money }}</span>
+        {% endif %}
+        {% unless cart.items_subtotal_price >= 50000 %}
+        <h5 id="free">Brakuje {{ cart.items_subtotal_price | minus: 50000 | times: -1 | money }} do darmowej wysyłki</h5>
+        {% endunless %}
       </div>
       <div class="gift">
         <label for="gift">
         <input type="checkbox" id="gift" name="gift" onclick="check()">Pakowanie na prezent
         </label>
-        <span>+ 15 zł</span>
+        <span class="gift-wrap" id="gift-wrap">+ 15 zł</span>
       </div>
       <div class="sum-up">
-        <span>SUMA</span>
-        <span>
-          {% if cart.items_subtotal_price <= 50000 and  | money %}
-          {{ cart.total_price | plus: 2000 | money }}
-          {% endif %}
-        </span>
+        <div class="price">
+          <span>SUMA</span>
+          <span id="total-cost">
+            {% if cart.items_subtotal_price <= 50000 | money %}
+            {{ cart.total_price | plus: 2000 | money }}
+            {% else %}
+            {{ cart.total_price | money }}
+            {% endif %}
+          </span>
+        </div>
+        <div class="vat">
+          <p>(w tym 23% VAT)</p>
+        </div>
       </div>
-      <button type="submit" name="update">Update</button>
-      <button type="submit" name="checkout">Checkout</button>
+      <button type="submit" name="checkout" class="payments">PRZEJDŹ DO ZAMÓWIENIA</button>
+      <!--<button type="submit" name="update">Update</button>-->
     </div>
   </form>
 {% else %}
-  <h2>cart</h2>
-  Cart is empty
+  <h2>KOSZYK</h2>
+  Tu nic nie ma
 {% endif %}
 </div>
+{% section 'news-landing' %}
+{% section 'newsletter' %}
+{% section 'credits' %}
+{% section 'footer' %}
 <script>
   const giftCheckbox = document.getElementById('gift')
-  const total=document.getElementById('total')
+  const giftWrap=document.getElementById('gift-wrap')
+  const totalCost=document.getElementById('total-cost')
   function check(){
   if(giftCheckbox.checked==1){
-    total.innerHTML="{{ cart.total_price | plus: 1500 | money }}"
+    giftWrap.classList.add('turned-on')
+    totalCost.innerHTML="{{ cart.total_price | plus: 1500 | money }}"
   }
-  else 
-    total.innerHTML="{{ cart.total_price | money }}"
+  else{
+    totalCost.innerHTML="{{ cart.total_price | money }}"
+    giftWrap.classList.remove('turned-on')
+  }
   }
 
   const minusButton=document.getElementsByClassName('minus')

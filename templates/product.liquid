@@ -21,20 +21,20 @@
     <h3>{{ current_variant.price | money }}</h3>
   </div>
   <div class="variants">
-    <div class="product-template" for="product-template">WZÓR</div>
-    <div class="variants-inner">
-      	{% for variant in product.variants %}
-        	<img id="{{variant.id}}" onclick="selectedVariant(this.id)" src="{{ variant.image.src | img_url: 'medium' }}">
-      	{% endfor %}
-    </div>
-  </div>
-{% form 'product', product %}
+<form action="/cart/add" method="post">
     <div class="product-size-wrapper">
-      <div class="product-size" for="product-size">ROZMIAR</div>
-      <select id="product-size" name="id">
-        	{% for variant in product.variants %}
-            	<option value="{{variant.id}}">{{ variant.option2 }}</option>
-        	{% endfor %}
+        {% for product_option in product.options_with_values %}
+          <div class="inner-wrapper">
+            <label class="product-sizes">{{ product_option.name }}</label>
+                <select id="product-sizes" name="id">
+                  {% for variant in product.variants %}
+                    {% for option in variant.options %}
+                        <option value="{{variant.id}}">{{option}}</option>
+                    {% endfor %}
+                  {% endfor %}
+                </select>
+          </div>
+        {% endfor %}
       </select>
     </div>
     <div class="product-description">
@@ -47,7 +47,7 @@
       <div class="plus">+</div>
     </div>
     <button type="submit" name="add" id="AddToCart">DODAJ DO KOSZYKA</button>
-{% endform %}
+  </form>
     <div class="additional-information dropdown">
       <span>Dodatkowe informacje</span>
       <div class="symbol">
