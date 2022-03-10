@@ -1,6 +1,6 @@
 {{ 'footer.scss ' | asset_url | stylesheet_tag }}
 <div class="footer-wrapper">
-    <img src="{{ 'footer-logo.png' | asset_url }}">
+    <img class="logo-footer" loading="lazy" src="{{ 'footer-logo.png' | asset_url }}">
     <div class="addres-wrapper">
         <h3>SKLEP STACJONARNY</h3>
         <div class="place">ul. Dyrekcyjna 3, Wrocław<br>
@@ -36,7 +36,7 @@
         <h3>OBSERWUJ NAS</h3>
         {% for block in section.blocks %}
             {% if block.type =='social' %}
-                <a href="{{ block.settings.socialLink }}"><img src="{{ block.settings.socialLogo | img_url: 'medium' }}"></a>
+                <a href="{{ block.settings.socialLink }}"><img loading="lazy" src="{{ block.settings.socialLogo | img_url: 'medium' }}"></a>
             {% endif %}
         {% endfor %}
     </div>
@@ -44,7 +44,7 @@
         <h3>PŁATNOŚCI</h3>
         {% for block in section.blocks %}
             {% if block.type =='payments' %}
-                <img src="{{ block.settings.paymentLogo | img_url: 'medium' }}">
+                <img loading="lazy" src="{{ block.settings.paymentLogo | img_url: 'medium' }}">
             {% endif %}
         {% endfor %}
     </div>

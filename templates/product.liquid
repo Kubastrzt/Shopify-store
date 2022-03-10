@@ -5,7 +5,7 @@
 <div class="slider-wrapper">
   <div class="slider snaps">
     {% for image in product.images %}
-      <img src="{{ product.featured_image | img_url: 'medium' }}">
+      <img loading="lazy" src="{{ product.featured_image | img_url: 'medium' }}">
     {% endfor %}
   </div>
 </div>

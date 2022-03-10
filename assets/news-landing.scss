@@ -18,7 +18,6 @@
     overflow-y:hidden;
     display: grid;
     grid-auto-flow: column;
-  	padding: 0 0 0 20px;
 }
 .products-outer-wrapper::-webkit-scrollbar{
 	display: none;
@@ -47,7 +46,7 @@
 }
 .products-inner-wrapper{
     height: 528px;
-    padding: 0 20px 0 0;
+    padding: 0 20px;
 }
 .product-collection-title{
     color:#527D78;
@@ -67,4 +66,49 @@
 .product-price{
     color: #527D78;
     font-size: 12px;
+}
+.scroll-left, .scroll-right{
+    display: none;
+}
+@media all and (min-width: 700px){
+    .products-inner-wrapper{
+        height: 528px;
+        padding: 0 20px;
+    }
+    .product-img{
+        height:429px;
+        width: 341px;
+    }
+    .products{
+        width: 341px;
+    }
+}
+
+@media all and (min-width: 1500px){
+    .products-outer-wrapper{
+        margin: 0 auto;
+        max-width: calc(4*381px);
+    }
+    .landing-news{
+        position: relative;
+    }
+}
+@media all and (min-width: 1730px){
+    .scroll-left{
+        display: flex;
+        align-items: center;
+        height: 429px;
+        position: absolute;
+        padding: 0 0 0 100px;
+    }
+    .scroll-right{
+        display: flex;
+        align-items: center;
+        height: 429px;
+        top: 0;
+        right: 0;
+        position: absolute;
+        margin: 136px 0 0 0;
+        padding: 0 100px 0 0;
+    }
 }

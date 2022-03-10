@@ -30,14 +30,17 @@
     font-weight: bold;
     margin: 0 0 30px;
 }
-.newsletter-wrapper h3{
+.signup-wrapper{
+    width: 100%;
+}
+.signup-wrapper h3{
     font-size: 12px;
     letter-spacing: 3px;
     font-weight: normal;
     color: #527D78;
     padding: 5px 10px;
 }
-.newsletter-wrapper input{
+.signup-wrapper input{
     width: 100%;
     max-height:44px;
     padding: 16px 24px;
@@ -46,4 +49,18 @@
     text-transform: uppercase;
     letter-spacing: 2px;
     margin: 0 0 25px;
+    border: none;
+}
+@media all and (min-width: 525px){
+    .signup-wrapper{
+        display: flex;
+        justify-content: center;
+    }
+    .signup-wrapper input{
+        max-width: 340px;
+    }
+    .signup-wrapper h3{
+        margin: auto 0;
+        height: 44px;
+    }
 }

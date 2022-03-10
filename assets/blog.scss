@@ -10,7 +10,16 @@
     font-weight: normal;
     text-align: center;
 }
-.container h1{
+.see-more{
+    margin: 50px 0;
+    color: #527D78;
+    letter-spacing: 3px;
+    text-align: center;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+.title-blog{
     letter-spacing: 2px;
     font-size: 18px;
     font-weight: normal;
@@ -57,6 +66,7 @@
 }
 .post{
     width: 300px;
+    position: relative;
 }
 .post h2{
     margin:24px 0 24px 0;
@@ -83,9 +93,52 @@
     width: max-content;
     border-bottom: 1px solid #F3B4A7;
 }
-.container h1{
-    margin: 50px 0;
-    color: #527D78;
-    letter-spacing: 3px;
-    font-size: 12px;
-}
+
+@media all and (min-width: 660px ){
+    .post-img img{
+        width: 372px;
+        height: 239px;
+        object-fit: cover;
+    }
+    .post{
+        width: 372px;
+    }
+    .blog-wrapper{
+        height: 636px;
+    }
+    .read-more{
+        position: absolute;
+    }
+    
+}   
+@media all and (min-width: 1000px ){
+    .post-img img{
+        width: 372px;
+        height: 239px;
+        object-fit: cover;
+    }
+    .post{
+        width: 372px;
+    }
+    .blog-wrapper{
+        height: 636px;
+        grid-auto-columns: 372px;
+        gap: 136px;
+    }
+}   
+@media all and (min-width: 1430px ){
+    .post-img img{
+        width: 372px;
+        height: 239px;
+        object-fit: cover;
+    }
+    .post{
+        width: 372px;
+    }
+    .blog-wrapper{
+        height: 636px;
+        grid-auto-columns: 372px;
+        gap: 136px;
+        justify-content: center;
+    }
+}   

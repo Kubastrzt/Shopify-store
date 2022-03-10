@@ -12,7 +12,7 @@
           <td rowspan="4">
             <a href="{{ item.url | within: collections.all }}">
               <div class="cart-product-img">
-                <img src="{{ item | img_url: 'medium' }}" alt="{{ item.title | escape }}">
+                <img loading="lazy" src="{{ item | img_url: 'medium' }}" alt="{{ item.title | escape }}">
               </div>
             </a>
           </td>

@@ -21,7 +21,7 @@
     </div>          
     <div class="logo">
         {% if section.settings.logoheader %}
-            <a href="/"><img src="{{section.settings.logoheader | img_url: 'medium'}}"></a>
+            <a href="/"><img loading="lazy" src="{{section.settings.logoheader | img_url: 'medium'}}"></a>
         {% endif %}
     </div>
     <div class="menu-buttons">
@@ -36,7 +36,37 @@
     </div>
   </div>
 </nav>
+<script>
+  
+var x
+var y
 
+window.onerror = function(message, url, lineNumber) {  
+    return true; 
+};
+
+function scroller() {
+    var elmnt = document.querySelector(".carousel")
+    x = elmnt.scrollLeft
+    var stala=100;
+    var viewportWidth=window.innerWidth;
+    const dots= document.querySelectorAll('.slide-dots')
+    dots[0].classList.add('dots-addon')
+    for(var sliderLength=1;sliderLength<=dots.length;sliderLength++)
+    {
+        if(x>stala){
+            dots[sliderLength-1].classList.remove('dots-addon')
+            dots[sliderLength].classList.add('dots-addon')
+        }
+        else if(stala>x){
+            dots[sliderLength].classList.remove('dots-addon')
+        }
+        stala+=viewportWidth;
+    }
+  }
+
+window.setInterval('scroller()',100)
+</script>
   {% schema %}
     {
         "name":"Nagłówek",

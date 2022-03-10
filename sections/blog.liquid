@@ -4,13 +4,13 @@
         <h5>Baza wiedzy</h5>
     </header>
     <div class="label">
-        <h1>{{ section.settings.heading-text }}</h1>
+        <h1 class="title-blog">{{ section.settings.heading-text }}</h1>
     </div>
     <div class="blog-wrapper blog-snaps">
         {% for article in section.settings.blogID.articles %}
             <div class="post-inner-wrapper">
                 <div class="post-img">
-                    <img src="{{ article.image | img_url:"medium" }}">
+                    <img loading="lazy" src="{{ article.image | img_url:"medium" }}">
                 </div>
                 <div class="post">
                     <h2>{{ article.title }}</h2>
@@ -20,7 +20,7 @@
             </div>
         {% endfor %}
     </div>
-    <a href="{{section.settings.blogID.url}}"><h1>ZOBACZ WIĘCEJ</h1></a>
+    <a href="{{section.settings.blogID.url}}"><h1 class="see-more">ZOBACZ WIĘCEJ</h1></a>
 </div>
   
   {% schema %}
