@@ -7,7 +7,11 @@
             <div class="product-img">
               <a href="{{ product.url }}"><img src="{{ product.featured_image.src | img_url :"medium" crop :'center' }}"></a>
             </div>
-            <div class="product-collection-title">{{ collection.title }}</div>
+            <div class="product-collection-title">
+              {% for collection in product.collections %}
+                {{ collection.title }}
+              {% endfor %}
+            </div>
             <div class="product-title">{{ product.title }}, {{ product.tags }}</div>
             <div class="product-price">
               {{ product.price | money }}

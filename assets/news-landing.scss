@@ -1,5 +1,5 @@
 .landing-news{
-    padding: 60px 0 10px;
+    padding: 60px 20px 10px;
     width: 100%;
 }
 .landing-news h2{
@@ -37,7 +37,7 @@
 }
 .snap-product{
     scroll-snap-type: inline mandatory;
-    scroll-padding-inline: 5px;
+    scroll-padding-inline: 10px;
 }
 .snap-product > *{
     scroll-snap-align: start;
@@ -62,7 +62,7 @@
 }
 .products-inner-wrapper{
     height: 528px;
-    padding: 0 20px;
+    padding: 0 20px 0 0;
 }
 .product-collection-title{
     color:#527D78;
