@@ -2,22 +2,22 @@
 	position: relative;
 	width: 100vw;
 	height: 568px;
-	overflow-y: hidden;
 }
 .slider-inner{
 	position: absolute;
 	top: 0;
 	left: 0;
+	overflow-y: hidden;
+	overflow-x: scroll;
 	display: grid;
 	grid-auto-flow: column;
-	grid-auto-columns: 100vw;
-	pointer-events: none;
+	grid-auto-columns: 100%;
 }
 
-.slider::-webkit-scrollbar{
+.slider-inner::-webkit-scrollbar{
 	display: none;
 }
-.slider{
+.slider-inner{
 	-ms-overflow-style: none;
 	scrollbar-width: none; 
 }
