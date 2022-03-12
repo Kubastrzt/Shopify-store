@@ -1,8 +1,11 @@
 
   {{ 'carousel.scss' | asset_url | stylesheet_tag }}
 <div onload="scroller()" class="slider snap-scrolling">
+
     <div class="slider-inner snap-scrolling">
+
         {% for block in section.blocks %}
+
         <div class="slide">
             <img loading="lazy" src="{{ block.settings.carousel-img | img_url:'master' }}">
             <div class="content-img">
@@ -10,7 +13,9 @@
                 <a href="#">ZOBACZ WIĘCEJ</a>
             </div>
         </div>
+
         {%endfor%}
+        
     </div>
 </div>
 <div class="dots-wrapper">
