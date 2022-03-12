@@ -1,4 +1,3 @@
-
 var x
 var y
 
@@ -7,7 +6,7 @@ window.onerror = function(message, url, lineNumber) {
 };
 
 function scroller() {
-    var elmnt = document.querySelector(".carousel")
+    var elmnt = document.querySelector(".slider")
     x = elmnt.scrollLeft
     var stala=100;
     var viewportWidth=window.innerWidth;
@@ -28,3 +27,65 @@ function scroller() {
 
 window.setInterval('scroller()',100)
 
+
+const slider = document.querySelector('.slider')
+const slide = document.querySelector('.slider-inner')
+
+let clicked = false 
+let startingPoint
+let z
+
+slider.addEventListener('mousedown', (e)=>{
+    if(window.innerWidth>=1458){
+
+        clicked = true;
+        startingPoint = e.offsetX - slide.offsetLeft;
+        slider.style.cursor = 'grabbing'
+    }
+    else return
+})
+
+slider.addEventListener('mouseenter', ()=>{
+    if(window.innerWidth>=1458){
+    slider.style.cursor = 'grab'
+    }
+    else return
+})
+
+slider.addEventListener('mouseup', ()=>{
+    if(window.innerWidth>=1458){
+    slider.style.cursor = 'grab'
+    }
+    else return
+})
+
+window.addEventListener('mouseup', ()=>{
+    if(window.innerWidth>=1458){
+    clicked= false
+    }
+    else return
+})
+
+slider.addEventListener('mousemove', (e)=>{
+    if(window.innerWidth>=1458){
+        if(!clicked) return
+        e.preventDefault()
+        z = e.offsetX
+
+        slide.style.left = `${z - startingPoint}px`
+
+        checkboundary()
+    }
+    else return
+})
+
+function checkboundary(){
+    let outer = slider.getBoundingClientRect()
+    let inner = slide.getBoundingClientRect()
+    if(parseInt(slide.style.left)> 0 ){
+        slide.style.left = '0px'
+    }
+    else if(inner.right < outer.right){
+        slide.style.left = `-${inner.width -outer.width}px`
+    }
+}
