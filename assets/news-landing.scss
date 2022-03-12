@@ -37,7 +37,7 @@
 }
 .snap-product{
     scroll-snap-type: inline mandatory;
-    scroll-padding-inline: 10px;
+    scroll-padding-inline: 5px;
 }
 .snap-product > *{
     scroll-snap-align: start;
@@ -62,7 +62,7 @@
 }
 .products-inner-wrapper{
     height: 528px;
-    padding: 0 10px;
+    padding: 0 20px;
 }
 .product-collection-title{
     color:#527D78;
