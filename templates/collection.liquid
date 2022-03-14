@@ -1,11 +1,63 @@
-{% if collections.all.tags.size > 0 %}
-  <ul class="tag-filters">
-    {% for tag in collections.all.tags %}
-      {% if current_tags contains tag %}
-        <li class="tag-filters__item active">{{ tag | link_to_remove_tag: tag }}</li>
-      {% else %}
-        <li class="tag-filters__item">{{ tag | link_to_add_tag: tag }}</li>
-      {% endif %}
+{{ 'collecion.scss' | asset_url | stylesheet_tag }}
+
+{% paginate collection.products by 4 %}
+  <div class="collection-wrapper">
+    {% for product in collection.products %}
+          <div class="product-tab">
+            <div class="product-img">
+              <a href="{{ product.url }}"><img src="{{ product.featured_image.src | img_url :"medium" crop :'center' }}"></a>
+            </div>
+            <div class="product-collection-title">
+              {% for collection in product.collections %}
+                {{ collection.title }}
+              {% endfor %}
+            </div>
+            <div class="product-title">{{ product.title }}, {{ product.tags }}</div>
+            <div class="product-price">
+              {{ product.price | money }}
+              {% if product.compare_at_price_max > product.price %}
+                <span>{{ product.compare_at_price_max | money }}</span>
+              {% endif %}
+            </div>
+          </div>
     {% endfor %}
-  </ul>
-{% endif %}
+  </div> 
+  <div class="collection-pagination">
+    {% for part in paginate.parts %}
+      <a href="{{ part.url }}">{{ part.title }}</a>
+    {% endfor %}
+  </div>
+{% endpaginate %}
+{% section 'newsletter' %}
+{% section 'credits' %}
+{% section 'footer' %}
+<div class="filters-categories-wrapper">
+  <div class="filter">
+    FLITRY
+  </div>
+  <div class="category">
+    KATEGORIE
+  </div>
+</div>
+<div class="listing">
+  {% if collection.tags.size > 0 %}
+    <ul class="filters-list">
+      {% for tag in collections.all.tags %}
+        {% if current_tags contains tag %}
+          <li class="filters-list-item active">{{ tag | link_to_remove_tag: tag }}</li>
+        {% else %}
+          <li class="filters-list-item">{{ tag | link_to_add_tag: tag }}</li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  {% endif %}
+</div>
+<script>
+const filter=document.querySelector('.filter')
+const listing=document.querySelector('.listing')
+
+filter.addEventListener('click',()=> {
+  listing.classList.toggle('showed')
+})
+
+</script>
