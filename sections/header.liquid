@@ -17,13 +17,27 @@
           </div>
           {% for link in linklists.main-menu.links %}
             <a href="{{ link.url }}">{{ link.title }}</a>
+            {{ menu.levels }}
           {% endfor %}
-    </div>          
+    </div> 
+
+    <div class="menu-desktop">
+      {% for link in linklists.main-menu.links %}
+      <div class="links"><a id="lin" href="{{ link.url }}">{{ link.title }}</a>
+      <div class="drop">
+        {% for sub_link in link.links %}
+          <div class="box"><a href="{{ sub_link.url }}" class="dropdown-active">{{ sub_link.title }}</a></div>
+        {% endfor %}
+      </div></div>
+      {% endfor %}
+    </div>     
+    
     <div class="logo">
         {% if section.settings.logoheader %}
             <a href="/"><img loading="lazy" src="{{section.settings.logoheader | img_url: 'medium'}}"></a>
         {% endif %}
     </div>
+
     <div class="menu-buttons">
       <a href="#" class="search"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M20.2 18.8L23.5 22.1C23.9 22.5 23.9 23.1 23.4 23.5C23.2 23.7 22.9 23.8 22.7 23.8C22.5 23.8 22.2 23.7 22 23.5L18.7 20.2C16.7 21.8 14.2 22.8 11.5 22.8C5.3 22.8 0.199997 17.8 0.199997 11.5C0.199997 5.20001 5.4 0.200012 11.6 0.200012C17.8 0.200012 22.9 5.30001 22.9 11.5C22.9 14.3 21.9 16.8 20.2 18.8ZM11.5 2.20001C6.4 2.20001 2.2 6.40001 2.2 11.5C2.2 16.6 6.4 20.8 11.5 20.8C16.6 20.8 20.8 16.6 20.8 11.5C20.8 6.40001 16.6 2.20001 11.5 2.20001Z" fill="#3D4D4C"/>
@@ -34,6 +48,7 @@
 </svg><div class="amount-of-products">{{ cart.item_count }}</div>
 </a>
     </div>
+
   </div>
 </nav>
   {% schema %}

@@ -68,3 +68,93 @@
     justify-content: center;
     align-items: center;
   }
+  .menu-desktop{
+    display: none;
+  }
+@media all and (min-width: 1000px){
+  .menu-links{
+    display: none;
+  }
+  .hamburger{
+    display: none;
+  }
+  .menu-desktop{
+    display: flex;
+  }
+  .menu-inner-wrapper{
+    display: block;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+  }
+  .menu{
+    height: 202px;
+    margin: 0;
+    padding-bottom: 0;
+  }
+  .logo{
+    position: absolute;
+    display: flex;
+    margin-bottom: 25px;
+    justify-content: center;
+  }
+  .menu-buttons{
+  }
+  .menu-desktop{
+    border-top: 1px solid #97979715;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: max-content;
+    bottom: 0px;
+  }
+  .links{
+    position: relative;
+    display: grid;
+    grid-auto-flow: row;
+  }
+  .links a{
+    padding: 25px 24px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #3D4D4C;
+    text-decoration: none;
+  }
+  .menu-desktop a:hover{
+    border-top: 1px solid #F3B4A7;
+  }
+  .drop{
+    z-index: 1;
+    position: absolute;
+    top: 61px;
+    grid-auto-columns: auto;
+    background-color: #F8F8F8;
+    width: 300px;
+    height: max-content;
+    display: none;
+  }
+  .box a{
+    padding: 0;
+  }
+  .drop a:hover{
+    border: none;
+  }
+  .box{
+    display: flex;
+    padding: 0 24px;
+    margin: 12px 0;
+    align-items: center;
+    height: 24px;
+  }
+  .links a:hover ~.drop{
+    display: block;
+  }
+  .links a:focus ~.drop{
+    display: block;
+  }
+  .toggle-dropdown{
+    display: block;
+  }
+}
