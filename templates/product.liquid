@@ -23,19 +23,24 @@
   <div class="variants">
 <form action="/cart/add" method="post">
     <div class="product-size-wrapper">
-        {% for product_option in product.options_with_values %}
-          <div class="inner-wrapper">
-            <label class="product-sizes">{{ product_option.name }}</label>
-                <select id="product-sizes" name="id">
-                  {% for variant in product.variants %}
-                    {% for option in variant.options %}
-                        <option value="{{variant.id}}">{{option}}</option>
-                    {% endfor %}
-                  {% endfor %}
-                </select>
-          </div>
-        {% endfor %}
-      </select>
+
+      
+          
+           
+
+
+      {% for product_option in product.options_with_values %}
+      <div class="inner-wrapper">
+        <label class="product-sizes">{{ product_option.name }}</label>
+            <select id="product-sizes" name="id">
+              {% for variant in product.variants %}
+                {% for option in variant.options %}
+                    <option value="{{variant.id}}">{{option}}</option>
+                {% endfor %}
+              {% endfor %}
+            </select>
+      </div>
+    {% endfor %}
     </div>
     <div class="product-description">
       {{ product.description }}

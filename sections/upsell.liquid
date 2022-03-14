@@ -1,0 +1,30 @@
+{{ 'upsell.scss' | asset_url | stylesheet_tag }}
+{% for item in cart.items %}
+    {% if item.product.url == section.settings.upsell-id %}
+        <div class="upsell-wrapper">
+            <p>Kupując {{ section.settings.upsell-amount }} szt. <a href="item.product.url" style="text-transform: uppercase; text-decoration: none; color: #3D4D4C75;">{{ item.product.title }}</a> oszczędzasz {{ section.settings.upsell-discount }}</p>
+        </div>
+    {%endif%}
+{% endfor %}
+
+{% schema %}
+{
+    "name":"Upsell",
+    "settings":[{
+       "type": "url",
+       "label":"Url przedmiotu",
+       "id":"upsell-id"
+    },
+    {   
+        "type": "text",
+       "label":"Ilość sztuk",
+       "id":"upsell-amount"
+    },
+    {
+        "type": "text",
+       "label":"Kwota",
+       "id":"upsell-discount"
+    }
+    ]
+}
+{% endschema %}

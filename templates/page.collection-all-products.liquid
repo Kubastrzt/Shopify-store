@@ -33,16 +33,16 @@
 {% section 'footer' %}
 <div class="filters-categories-wrapper">
   <div class="filter">
-    <a href="">FLITRY</a>
+    FLITRY
   </div>
   <div class="category">
-    <a href="">KATEGORIE</a>
+    KATEGORIE
   </div>
 </div>
 <div class="listing">
   {% for tags in collections.all.tags %}
     <div class="tags">
-      <form action="">
+      <form action="/pages/nowosci">
         <input type="checkbox" id="tag" name="tag">
         <label for="tag">{{ tags }}</label>
         {% assign sort_by = tag %}

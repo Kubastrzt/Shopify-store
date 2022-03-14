@@ -25,14 +25,16 @@
         <tr>
           <td>
             <div class="cart-product-variant">
-              {{ item.variant.title }}
+              {% if item.variant.available %}
+                {{ item.variant.title }}
+              {% endif %}
             </div>
           </td>
         </tr>
         <tr>
           <td>
             <div class="cart-product-price">
-            {{ item.price | money }}
+            {{ item.product.price | money }}
             </div>
           </td>
         </tr>
@@ -54,6 +56,7 @@
     <div class="baner">
       <p>Kod rabatowy można wprowadzić w następnym kroku</p>
     </div>
+        {% section 'upsell' %}
     <div>
       <div class="sum">
         <span>PRODUKTY</span>
@@ -61,13 +64,13 @@
       </div>
       <div class="send">
         <span>WYSYŁKA</span>
-        {% if cart.items_subtotal_price <= 50000 %}
+        {% if cart.items_subtotal_price <= 20000 %}
         <span class="cost">{{ '2000' | money }}</span><br>
         {% else %}
         <span class="cost">{{ '0' | money }}</span>
         {% endif %}
-        {% unless cart.items_subtotal_price >= 50000 %}
-        <h5 id="free">Brakuje {{ cart.items_subtotal_price | minus: 50000 | times: -1 | money }} do darmowej wysyłki</h5>
+        {% unless cart.items_subtotal_price >= 20000 %}
+        <h5 id="free">Brakuje {{ cart.items_subtotal_price | minus: 20000 | times: -1 | money }} do darmowej wysyłki</h5>
         {% endunless %}
       </div>
       <div class="gift">
