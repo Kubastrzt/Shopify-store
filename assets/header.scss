@@ -71,6 +71,9 @@
   .menu-desktop{
     display: none;
   }
+  .menu-buttons-desktop{
+    display: none;
+  }
 @media all and (min-width: 1000px){
   .menu-links{
     display: none;
@@ -87,7 +90,8 @@
     display: flex;
     justify-content: center;
     height: 100%;
-    width: 100%;
+    width: 1482px;
+    margin: 0 auto;
   }
   .menu{
     height: 202px;
@@ -101,6 +105,7 @@
     justify-content: center;
   }
   .menu-buttons{
+    display: none;
   }
   .menu-desktop{
     border-top: 1px solid #97979715;
@@ -148,13 +153,19 @@
     align-items: center;
     height: 24px;
   }
-  .links a:hover ~.drop{
-    display: block;
-  }
-  .links a:focus ~.drop{
-    display: block;
-  }
   .toggle-dropdown{
     display: block;
+  }
+  .menu-buttons-desktop{
+    display: block;
+    position: absolute;
+    right: 0;
+  }
+  .menu-buttons-desktop a{
+    color: #3D4D4C75;
+    font-size: 11px;
+    text-decoration: 0;
+    letter-spacing: 2px;
+    margin: 0 19px;
   }
 }
