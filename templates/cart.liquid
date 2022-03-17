@@ -4,7 +4,103 @@
   <div class="heading">
   <h1>KOSZYK</h1>
   </div>
-  <form action="/cart" method="post" novalidate>
+  <form action="/cart" method="post" novalidate class="form-desktop">
+    {% for item in cart.items %}
+      <div class="cart-grid">
+          <div class="grid-img">
+            <a href="{{ item.url | within: collections.all }}">
+              <div class="cart-product-img">
+                <img loading="lazy" src="{{ item | img_url: 'medium' }}" alt="{{ item.title | escape }}">
+              </div>
+            </a>
+          </div>
+          <div class="grid-title">
+            <div class="cart-product-title">
+              <a href="{{ item.url }}">{{ item.product.title }}</a>
+            </div>
+            <div class="cart-product-variant">
+              {% if item.variant.available %}
+                {{ item.variant.title }}
+              {% endif %}
+            </div>
+          </div>
+          <div class="grid-quantity">
+            <div class="quantity-and-remove">
+              <div class="quantity-wrapper">
+                <button type="submit" name="update" class="minus" id="{{ item.product.id }}">-</button>
+                <input type="number" name="updates[]" id="updates_{{ item.key }}" class="updates" value="{{ item.quantity }}" min="0"><span>SZT.</span>
+                <button type="submit" name="update" class="plus">+</button>
+              </div>
+            </div>
+          </div>
+          <div class="grid-price">
+            <div class="cart-product-price">
+              {{ item.product.price | money }}
+            </div>
+            <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0">USUŃ</a>
+          </div>
+      </div>
+    {% endfor %}
+    <div class="shipping-grid">
+      <div class="desktop-baner">
+        <p>Kod rabatowy można wprowadzić w następnym kroku</p>
+      </div>
+
+        {% section 'upsell' %}
+      <div class="shipping">
+        <div class="sum">
+          <span>PRODUKTY</span>
+          <span class="cost">{{ cart.items_subtotal_price | money }}</span>
+        </div>
+        <div class="send">
+          <span>WYSYŁKA</span>
+          {% if cart.items_subtotal_price <= 20000 %}
+          <span class="cost">{{ '2000' | money }}</span><br>
+          {% else %}
+          <span class="cost">{{ '0' | money }}</span>
+          {% endif %}
+          {% unless cart.items_subtotal_price >= 20000 %}
+          <h5 id="free">Brakuje {{ cart.items_subtotal_price | minus: 20000 | times: -1 | money }} do darmowej wysyłki</h5>
+          {% endunless %}
+        </div>
+        <div class="gift">
+          <label for="gift">
+          <input type="checkbox" id="gift" name="gift" onclick="check()">Pakowanie na prezent
+          </label>
+          <span class="gift-wrap" id="gift-wrap">+ 15 zł</span>
+        </div>
+        <div class="sum-up">
+          <div class="price">
+            <span>SUMA</span>
+            <span id="total-cost">
+              {% if cart.items_subtotal_price <= 50000 | money %}
+              {{ cart.total_price | plus: 2000 | money }}
+              {% else %}
+              {{ cart.total_price | money }}
+              {% endif %}
+            </span>
+          </div>
+          <div class="vat">
+            <p>(w tym 23% VAT)</p>
+          </div>
+        </div> 
+        <button type="submit" name="checkout" class="payments">PRZEJDŹ DO ZAMÓWIENIA</button>
+      </div>
+      <!--<button type="submit" name="update">Update</button>-->
+    </div>
+  </form>
+
+
+
+
+
+
+
+
+
+
+
+  <form action="/cart" method="post" novalidate class="form-mobile">
     {% for item in cart.items %}
     <table>
       <thead>
@@ -16,18 +112,18 @@
               </div>
             </a>
           </td>
-          <td>
-            <div class="cart-product-title">
-              <a href="{{ item.url }}">{{ item.product.title }}</a>
-            </div>
-          </td>
         </tr>
         <tr>
           <td>
-            <div class="cart-product-variant">
-              {% if item.variant.available %}
-                {{ item.variant.title }}
-              {% endif %}
+            <div class="title-wrapper">
+              <div class="cart-product-title">
+                <a href="{{ item.url }}">{{ item.product.title }}</a>
+              </div>
+              <div class="cart-product-variant">
+                {% if item.variant.available %}
+                  {{ item.variant.title }}
+                {% endif %}
+              </div>
             </div>
           </td>
         </tr>

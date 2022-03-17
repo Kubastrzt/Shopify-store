@@ -2,78 +2,105 @@
 {{ 'product-page.scss' | asset_url | stylesheet_tag }}
 {% assign current_variant = product.selected_or_first_available_variant %}
 {% assign featured_image = current_variant.featured_image | default: product.featured_image %}
-<div class="slider-wrapper">
-  <div class="slider snaps">
+<div class="product-grid">
+  <div class="slider-wrapper">
+    <div class="slider snaps">
+      {% for image in product.images %}
+        <img loading="lazy" src="{{ product.featured_image | img_url: 'medium' }}">
+      {% endfor %}
+    </div>
+    <div class="images-container">
+
+
+      <div class="scroll-up">
+        <svg width="19" height="11" viewBox="0 0 19 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path opacity="0.5" d="M18 10L9.5 1L1 10" stroke="#3D4D4C"/>
+        </svg>          
+      </div>
+      <div class="images">
+        {% for image in product.images %}
+          <img loading="lazy" class="image" src="{{ image.src | product_img_url: 'medium' }}">
+        {% endfor %}
+      </div>
+      <div class="scroll-down">
+        <svg width="19" height="11" viewBox="0 0 19 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path opacity="0.5" d="M18 1L9.5 10L1 1" stroke="#3D4D4C"/>
+          </svg>
+      </div>
+
+
+
+      <div class="main-image">
+          <img loading="lazy" src="{{ product.featured_image | img_url: 'medium' }}">
+      </div>
+    </div>
+  </div>
+  <div class="dots-wrapperr">
     {% for image in product.images %}
-      <img loading="lazy" src="{{ product.featured_image | img_url: 'medium' }}">
+        <div class="slider-dots"></div>
     {% endfor %}
   </div>
-</div>
-<div class="dots-wrapperr">
-  {% for image in product.images %}
-      <div class="slider-dots"></div>
-  {% endfor %}
-</div>
-<div class="product-info-wrapper">
-  <div class="general-info-wrapper">
-    <label>{{ product.collections.first.title }}</label>
-    <h1>{{ product.title }}</h1>
-    <h3>{{ current_variant.price | money }}</h3>
-  </div>
-  <div class="variants">
-<form action="/cart/add" method="post">
-    <div class="product-size-wrapper">
+  <div class="product-info-wrapper">
+    <div class="general-info-wrapper">
+      <label>{{ product.collections.first.title }}</label>
+      <h1>{{ product.title }}</h1>
+      <h3>{{ current_variant.price | money }}</h3>
+    </div>
+    <div class="variants">
+  <form action="/cart/add" method="post">
+      <div class="product-size-wrapper">
 
-      
-          
-           
+        
+            
+            
 
 
-      {% for product_option in product.options_with_values %}
-      <div class="inner-wrapper">
-        <label class="product-sizes">{{ product_option.name }}</label>
-            <select id="product-sizes" name="id">
-              {% for variant in product.variants %}
-                {% for option in variant.options %}
-                    <option value="{{variant.id}}">{{option}}</option>
+        {% for product_option in product.options_with_values %}
+        <div class="inner-wrapper">
+          <label class="product-sizes">{{ product_option.name }}</label>
+              <select id="product-sizes" name="id">
+                {% for variant in product.variants %}
+                  {% for option in variant.options %}
+                      <option value="{{variant.id}}">{{option}}</option>
+                  {% endfor %}
                 {% endfor %}
-              {% endfor %}
-            </select>
+              </select>
+        </div>
+      {% endfor %}
       </div>
-    {% endfor %}
-    </div>
-    <div class="product-description">
-      {{ product.description }}
-    </div>
-    <div for="Quantity" class="quantity-label">ILOŚĆ</div>
-    <div class="quantity-wrapper">
-      <div class="minus">-</div>
-      <input type="number" id="Quantity" name="quantity" value="1" min="1">
-      <div class="plus">+</div>
-    </div>
-    <button type="submit" name="add" id="AddToCart">DODAJ DO KOSZYKA</button>
-  </form>
-    <div class="additional-information dropdown">
-      <span>Dodatkowe informacje</span>
-      <div class="symbol">
-        <div class="vertical"></div>
-        <div class="horizontal"></div>
+      <div class="product-description">
+        {{ product.description }}
       </div>
-      <div class="additional-information-content content">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, repudiandae.
+      <div for="Quantity" class="quantity-label">ILOŚĆ</div>
+      <div class="quantity-wrapper">
+        <div class="minus">-</div>
+        <input type="number" id="Quantity" name="quantity" value="1" min="1">
+        <div class="plus">+</div>
+      </div>
+      <button type="submit" name="add" id="AddToCart">DODAJ DO KOSZYKA</button>
+    </form>
+      <div class="additional-information dropdown">
+        <span>Dodatkowe informacje</span>
+        <div class="symbol">
+          <div class="vertical"></div>
+          <div class="horizontal"></div>
+        </div>
+        <div class="additional-information-content content">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, repudiandae.
+        </div>
+      </div>
+      <div class="return-shipment dropdown">
+        <span>Wysyłka i zwroty</span>
+        <div class="symbol">
+          <div class="vertical"></div>
+          <div class="horizontal"></div>
+        </div>
+        <div class="return-shipment-content content">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, repudiandae.
+        </div>
       </div>
     </div>
-    <div class="return-shipment dropdown">
-      <span>Wysyłka i zwroty</span>
-      <div class="symbol">
-        <div class="vertical"></div>
-        <div class="horizontal"></div>
-      </div>
-      <div class="return-shipment-content content">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, repudiandae.
-      </div>
-    </div>
-</div>
+  </div>
 </div>
   {% section 'news-landing' %}  
   {% section 'newsletter' %}
@@ -174,6 +201,18 @@ dropdown[1].addEventListener('click', ()=> {
   content[1].classList.toggle('show')
 })
 
+
+const allImages = document.querySelectorAll('.image')
+const mainImage = document.querySelector('.main-image')
+
+for(var i=0;i<allImages.length;i++){
+  var image = allImages[i]
+  image.addEventListener('click', (e)=>{
+    var focusedImage=e.target;
+    console.log(focusedImage.src)
+    mainImage.innerHTML='<img loading="lazy" src='+focusedImage.src+'>'
+  })
+}
 
 </script>
 

@@ -50,7 +50,7 @@
 .cart-product-variant{
     letter-spacing: 1.8px;
     font-size: 11px;
-    margin: 0 0 0 20px;
+    margin: 7px 0 0 20px;
     text-transform: uppercase;
     color: #3D4D4C;
 }
@@ -218,4 +218,80 @@ table{
     text-align: center;
     border: none;
     margin: 36px 0;
+}
+.form-desktop{
+    display: none;
+}
+@media all and (min-width: 976px){
+    .form-mobile{
+        display: none;
+    }
+    .form-desktop{
+        display: block;
+    }
+    .cart-grid{
+        margin: 0 auto;
+        width: 976px;
+        display: grid;
+        grid-auto-flow: row;
+        grid-template-columns: 120px 1fr 200px 250px;
+        padding: 20px 0;
+        border-bottom: 1px solid #3D4D4C15;
+    }
+    .grid-img{
+        grid-column: 1;
+    }
+    .grid-title{
+        grid-column: 2;
+        margin: auto 0;
+    }
+    .grid-title a{
+        font-size: 12px;
+    }
+    .grid-quantity{
+        grid-column: 3;
+        margin: auto 0;
+    }
+    .grid-price{
+        grid-column: 4;
+        display: flex;
+        margin: auto 0;
+    }
+    .cart-product-price{
+        margin: 0;
+        padding: 0 60px 0 0;
+        font-size: 24px;
+    }
+    .grid-price a{
+        color: #3D4D4C75;
+        font-size: 11px;
+        letter-spacing: 2px;
+        text-decoration: none;
+    }
+    .shipping-grid{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 976px;
+        margin: 0 auto;
+    }
+    .desktop-baner{
+        grid-column: 1;
+        margin: 24px 0 10px;
+        border-radius: 4px;
+        background-color: #ECF3F2;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 44px;
+    }
+    .desktop-baner p{ 
+        color: #3D4D4C75;
+        line-height: 24px;
+        font-size: 12px;
+    }
+    .shipping{
+        grid-column: 2;
+        width: 100%;
+    }
 }
