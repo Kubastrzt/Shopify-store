@@ -54,10 +54,12 @@
     background-color: #F8F5F4;
 }
 .wrap{
+    max-width: calc(4*371px);
     display: flex;
     position: relative;
     overflow-x: scroll;
     overflow-y: hidden;
+    scroll-behavior: smooth;
     left: 0;
 }
 .products-inner-wrapper{
@@ -102,8 +104,7 @@
 
 @media all and (min-width: 1500px){
     .products-outer-wrapper{
-        margin: 0 auto;
-        max-width: calc(4*381px);
+        justify-content: center;
     }
     .landing-news{
         position: relative;
@@ -112,24 +113,30 @@
 @media all and (min-width: 1730px){
     .products-outer-wrapper{
         position: relative;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        width: 100%;
+    }
+    .wrap{
+        grid-column: 2;
+        width: 1482px;
     }
     .scroll-left{
+        grid-column: 1;
         display: flex;
         align-items: center;
-        justify-content: center;
-        height: 429px;
-        width: 150px;
-        position: absolute;
-        left: -150px;
-        z-index: 1;
+        justify-content: end;
+        height: 100%;
+        width: 100%;
+        padding: 40px;
     }
     .scroll-right{
+        grid-column: 3;
         display: flex;
         align-items: center;
-        justify-content: center;
-        height: 429px;
-        width: 150px;
-        position: absolute;
-        right: -150px;
+        justify-content: start;
+        height: 100%;
+        width: 100%;
+        padding: 40px;
     }
 }

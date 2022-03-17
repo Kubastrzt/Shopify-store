@@ -90,7 +90,8 @@
     display: flex;
     justify-content: center;
     height: 100%;
-    width: 1482px;
+    min-width: 800px;
+    max-width: 1482px;
     margin: 0 auto;
   }
   .menu{
