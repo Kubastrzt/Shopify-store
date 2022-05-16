@@ -73,7 +73,7 @@
           <div class="price">
             <span>SUMA</span>
             <span id="total-cost">
-              {% if cart.items_subtotal_price <= 50000 | money %}
+              {% if cart.items_subtotal_price <= 20000 | money %}
               {{ cart.total_price | plus: 2000 | money }}
               {% else %}
               {{ cart.total_price | money }}
