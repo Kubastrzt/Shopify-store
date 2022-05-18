@@ -1,5 +1,3 @@
-
-
     const left = document.querySelector('.scroll-left')
     const right = document.querySelector('.scroll-right')
     const items = document.querySelector('.wrap')
