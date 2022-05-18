@@ -27,8 +27,6 @@ function scroller() {
 
 window.setInterval('scroller()',100)
 
-
-
 const slider = document.querySelector('.slider')
 const slide = document.querySelector('.slider-inner')
 
