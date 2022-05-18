@@ -22,18 +22,18 @@
     grid-auto-flow: column;
 }
 .products-outer-wrapper::-webkit-scrollbar{
-	display: none;
+    display: none;
 }
 .products-outer-wrapper{
-	-ms-overflow-style: none;
-	scrollbar-width: none; 
+    -ms-overflow-style: none;
+    scrollbar-width: none; 
 }
 .wrap::-webkit-scrollbar{
-	display: none;
+    display: none;
 }
 .wrap{
-	-ms-overflow-style: none;
-	scrollbar-width: none; 
+    -ms-overflow-style: none;
+    scrollbar-width: none; 
 }
 .snap-product{
     scroll-snap-type: inline mandatory;
