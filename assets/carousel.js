@@ -1,18 +1,18 @@
-var x
-var y
+const x
+const y
 
 window.onerror = function(message, url, lineNumber) {  
     return true; 
 };
 
 function scroller() {
-    var elmnt = document.querySelector(".slider-inner")
+    const elmnt = document.querySelector(".slider-inner")
     x = elmnt.scrollLeft
-    var stala=100;
-    var viewportWidth=window.innerWidth;
+    const stala=100;
+    const viewportWidth=window.innerWidth;
     const dots= document.querySelectorAll('.slide-dots')
     dots[0].classList.add('dots-addon')
-    for(var sliderLength=1;sliderLength<=dots.length;sliderLength++)
+    for(let sliderLength=1;sliderLength<=dots.length;sliderLength++)
     {
         if(x>stala){
             dots[sliderLength-1].classList.remove('dots-addon')
