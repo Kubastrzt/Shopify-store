@@ -47,14 +47,14 @@
           "f42ac5bc-ee8c-43f9-84ff-dbcdd2739b12": {
             "type": "image",
             "settings": {
-              "carousel-img": "shopify:\/\/shop_images\/landing.png",
+              "carousel-img": "shopify:\/\/shop_images\/carousel.png",
               "img-content": "Pellentesque faucibus quis metus et elementum"
             }
           },
           "7790f7c9-f537-4450-9165-2d0f64b5b831": {
             "type": "image",
             "settings": {
-              "carousel-img": "shopify:\/\/shop_images\/landing.png",
+              "carousel-img": "shopify:\/\/shop_images\/carousel.png",
               "img-content": "Pellentesque faucibus quis metus et elementum"
             }
           },
@@ -84,9 +84,6 @@
       "16454727824b68bd4c": {
         "type": "text-image",
         "settings": {
-          "background": "shopify:\/\/shop_images\/b.png",
-          "tekst": "Ubranka dla niemowlaka",
-          "add-button": true
         }
       },
       "16457302636ed73def": {
