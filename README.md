@@ -14,6 +14,9 @@ Functionalities:
 - Cart (simple table, removing products, very basic upsell)
 
 I have been using shopify CLI, liquid, git, javascript, css
-
+ 
 ### https://testshop-fy2.myshopify.com/
 Preview password: skocle
+
+
+PS Don't judge me because of the html semantic, I was focused on liquid and functionalities 
